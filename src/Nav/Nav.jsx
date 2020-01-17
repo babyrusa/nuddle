@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FriendSearch from './FriendSearch';
+import FriendRequests from './FriendRequests';
 
 export default class Nav extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class Nav extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
       <FriendSearch/>
+      <FriendRequests/>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav ml-auto">
         {/* {userSession.isUserSignedIn() && ( */}
