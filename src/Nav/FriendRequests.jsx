@@ -18,7 +18,9 @@ export default class FriendRequests extends Component {
     })
     if (this.state.frButtonClicked) {
       console.log(User.currentUser()._id)
-      // const group = await FriendRequest.fetchList({recipient : User.currentUser()._id});      
+      const requests = await FriendRequest.fetchList({recipient : User.currentUser()._id});     
+      console.log(requests)
+       
     }
 
   }

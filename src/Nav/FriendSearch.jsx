@@ -26,9 +26,13 @@ export default class FriendSearch extends Component {
   }
   async addFriend(recipient){
     console.log(recipient)
-    // const fr = new FriendRequest({name : 'FriendRequest', sender : this.props.userSession.loadUserData().username});
-    // await fr.create()
-    // await fr.makeGroupMembership(recipient)
+    const fr = new FriendRequest({
+      name : 'FriendRequest', 
+      sender : User.currentUser()._id,
+      recipient : recipient});
+    await fr.create(); //error right here
+    // console.log(fr)
+    await fr.makeGroupMembership(recipient);
   }
   render() {
     return (

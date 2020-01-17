@@ -5,7 +5,7 @@ export default class FriendRequest extends UserGroup {
     static schema = {
       ...UserGroup.schema,
       sender: { type: String, required : true }, 
-      // recipient: {type: String,  required : true },
+      recipient: {type: String, decrypted : true,  required : true },
     };
     static defaults = {
     };
