@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import BlockstackUser from "../models/BlockstackUser";
 import { User } from "radiks";
 import FriendRequest from "../models/FriendRequest";
 

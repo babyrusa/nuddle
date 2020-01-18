@@ -1,3 +1,6 @@
+body{
+  font-family: "Times New Roman", Times, serif;
+}
 /* Avatar */
 .avatar{width:360px;height:360px; border-radius: 50%;}
 .avatar-section{margin-bottom:25px;}
@@ -19,4 +22,41 @@
   border : 1px solid grey;
   border-radius: 30px;
   cursor: pointer;
+}
+.chat-wrapper{
+  display: flex;
+
+}
+.chat-list{
+  width: 200px;
+  height: 100vh;
+  border-right: lightgrey 1px solid;
+}
+.chat-list div{
+  padding: 5px;
+}
+.chat-room{
+  width: 100%;
+}
+.friend-item{
+  display: flex;
+  flex-direction: row;
+}
+.photos {
+  width: 50px;
+  height: 50px;
+  padding-top : 50px;
+  border-radius: 50%;
+}
+textarea[autoresize] {
+  display: block;
+  overflow: hidden;
+  resize: none;
+}
+.msg-item{
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  background-color: lightgrey;
+  border-radius: 10px;
 }

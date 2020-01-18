@@ -7,6 +7,7 @@ import Home from "./Home/Home.jsx";
 import Profile from "./Profile/Profile.jsx";
 import Signin from "./Nav/Signin.jsx";
 import Nav from "./Nav/Nav.jsx";
+import Chat from "./Chat/Chat.jsx";
 
 
 const appConfig = new AppConfig(['store_write', 'publish_data']);
@@ -71,6 +72,14 @@ export default class App extends Component {
                     <Profile {...props} 
                     userSession={userSession}
                     handleSignOut={this.handleSignOut.bind(this)} />
+                  )}
+                />
+                <Route
+                  exact
+                  path={`/chat`}
+                  exact={true}
+                  render={props => (
+                    <Chat {...props} />
                   )}
                 />
                 <Redirect to="/"/>
