@@ -28,7 +28,7 @@ export default class FriendRequests extends Component {
     return (
       <React.Fragment>
       <button className="btn" onClick={this.getFriendRequests.bind(this)}>
-        <i class="fas fa-users"></i>
+        <i className="fas fa-users"></i>
       </button>
       {this.state.frButtonClicked && (this.state.friendRequests.length === 0 ?
       <div>Aw it's okay little boo if noone wanna see your nud</div>

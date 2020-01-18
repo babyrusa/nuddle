@@ -8,6 +8,7 @@ import Profile from "./Profile/Profile.jsx";
 import Signin from "./Nav/Signin.jsx";
 import Nav from "./Nav/Nav.jsx";
 import Chat from "./Chat/Chat.jsx";
+import CameraModal from "./Camera/CameraModal.jsx";
 
 
 const appConfig = new AppConfig(['store_write', 'publish_data']);
@@ -80,6 +81,14 @@ export default class App extends Component {
                   exact={true}
                   render={props => (
                     <Chat {...props} />
+                  )}
+                />
+                <Route
+                  exact
+                  path={`/camera`}
+                  exact={true}
+                  render={props => (
+                    <CameraModal {...props} />
                   )}
                 />
                 <Redirect to="/"/>

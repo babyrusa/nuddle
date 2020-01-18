@@ -6,6 +6,12 @@ export default class Message extends Model {
     content: {
       type: String
     },
+    type: {
+      type: String //text, 'image','video','expirable-image'
+    }
+    duration : {
+      type : Number //seconds
+    }
     userGroupId: {
       type: String,
       decrypted: true

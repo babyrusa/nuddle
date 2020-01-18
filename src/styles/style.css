@@ -53,10 +53,40 @@ textarea[autoresize] {
   overflow: hidden;
   resize: none;
 }
+.msg-body{
+  padding: 10px;
+  background-color: lightgrey;
+  border-radius: 10px;
+}
 .msg-item{
+  display: flex;
+  flex-direction: row;
   margin: 10px;
   padding: 10px;
   width: 200px;
-  background-color: lightgrey;
-  border-radius: 10px;
+}
+.camera-wrap{
+  position : relative;
+}
+.camera-button{
+  position : absolute;
+  bottom : 10px;
+  left :  40%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 10px solid rgb(231, 231, 231);
+  border-radius: 50%;
+}
+.camera-reset{
+  position : absolute;
+  top: 10px;
+  color: white;
+  left: 10px;
+}
+.emoji-mart {
+  z-index: 1;
+  position: absolute;
+  top : 50px;
+  right : 10px;
 }

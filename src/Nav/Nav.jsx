@@ -14,8 +14,8 @@ export default class Nav extends Component {
     const { handleSignOut, userSession } = this.props;
     const { person } = this.state;
     return (
-      <nav class="navbar navbar-dark bg-dark navbar-static-top">
-      <a class="navbar-brand" href="https://blockstack.org">
+      <nav className="navbar navbar-dark bg-dark navbar-static-top">
+      <a className="navbar-brand" href="https://blockstack.org">
         <img src="white-logo.svg" alt=""/>
       </a>
       <button

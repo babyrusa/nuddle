@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { User } from "radiks";
+import { User, UserGroup } from "radiks";
 import FriendRequest from "../models/FriendRequest";
+import userGroup from "radiks/lib/models/user-group";
 
 export default class FriendSearch extends Component {
   constructor(props) {
@@ -25,12 +26,12 @@ export default class FriendSearch extends Component {
   }
   async addFriend(recipient){
     console.log(recipient)
-    const fr = new FriendRequest({
+    const fr = new UserGroup({
       name : 'FriendRequest', 
-      sender : User.currentUser()._id,
-      recipient : recipient});
-    await fr.create(); //error right here
-    // console.log(fr)
+      // sender : User.currentUser()._id,
+      // recipient : recipient
+    });
+    await fr.create();
     await fr.makeGroupMembership(recipient);
   }
   render() {
