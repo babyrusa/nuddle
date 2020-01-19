@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Camera } from "react-feather";
 import Webcam from "react-webcam";
 import Modal from 'react-modal';
+import NewPost from "../Post/NewPost";
 Modal.setAppElement('body')
 
 const customStyles = {
@@ -11,7 +12,10 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    padding : '0px',
+    // width : '100%',
+    // height: '100%'
   }
 };
 
@@ -21,7 +25,8 @@ export default class CameraModal extends Component {
     this.cam = React.createRef();
     this.state = {
       img: null,
-      isTakingPicture: true
+      isTakingPicture: true,
+      showSendOption: false
     };
   } //monkey monkey monkey monkey monkey monkey monkey monkey
 
@@ -33,8 +38,13 @@ export default class CameraModal extends Component {
     this.props.postPhoto(this.state.img.split(',')[1])
     this.props.closeModal()
   }
+  readyToSend(){
+   this.setState({
+    showSendOption : true
+   }) 
+  }
   resetPicture(){
-    this.setState({ img: null, isTakingPicture: true });
+    this.setState({ img: null, isTakingPicture: true, showSendOption : false });
   }
   render() {
     return (
@@ -55,8 +65,9 @@ export default class CameraModal extends Component {
             </button>
           </>
         ) : (
-          <>
-            <img src={this.state.img} width={400} height={400} />
+          <React.Fragment>
+          <div>
+            <img src={this.state.img} width={400}  />
             <button
               className="btn camera-reset"
               onClick={() => { this.resetPicture() }}
@@ -65,11 +76,13 @@ export default class CameraModal extends Component {
             </button>
             <button
               className="camera-button"
-              onClick={() => { this.sendPicture() }}
+              onClick={() => { this.readyToSend() }}
             >
               <i class="fas fa-paper-plane"></i>
             </button>
-          </>
+          </div>
+          {this.state.showSendOption && <NewPost/>}
+          </React.Fragment>
         )}
       </div>
       </Modal>

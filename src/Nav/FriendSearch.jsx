@@ -57,6 +57,7 @@ export default class FriendSearch extends Component {
           value={this.state.input}
           onChange={this.onChangeHandler.bind(this)}
           onBlur={this.props.closeSearch}
+          // onMouseLeave={this.props.closeSearch}
         />
         {this.state.input !== "" && (
           <ul className="list-group" id="filterHashtag">

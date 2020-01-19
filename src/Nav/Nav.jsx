@@ -40,7 +40,7 @@ export default class Nav extends Component {
         {this.state.searchOpened ? (
           <FriendSearch closeSearch={this.closeSearch.bind(this)} />
         ) : (
-          <a className="nav-link" onClick={this.openSearch.bind(this)}>
+          <a className="nav-link" onMouseEnter={this.openSearch.bind(this)}>
             <i className="fa fa-search mr-1"></i>
           </a>
         )}
@@ -76,14 +76,14 @@ export default class Nav extends Component {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/chat">
+              <Link className="nav-link" to="/chat" data-toggle="tooltip" title="Chat">
                 <i className="far fa-comment-alt"></i>
-              </Link>{" "}
+              </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" data-toggle="tooltip" title="Refresh feed">
               <a className="nav-link" href="">
-                <i className="fas fa-redo-alt"></i>
-              </a>{" "}
+              <i class="fas fa-sync-alt"></i>
+              </a>
             </li>
           </ul>
         </div>

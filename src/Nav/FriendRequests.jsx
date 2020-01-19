@@ -44,7 +44,7 @@ export default class FriendRequests extends Component {
   render() {
     return (
       <React.Fragment>
-      <button className="nav-link btn" onClick={this.getFriendRequests.bind(this)}>
+      <button className="nav-link btn" onClick={this.getFriendRequests.bind(this)} data-toggle="tooltip" title="Check friend requests">
         <i className="fas fa-users"></i>
       </button>
       {this.state.frButtonClicked && (
