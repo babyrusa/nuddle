@@ -39,17 +39,18 @@ export default class Message extends Model {
       userGroupId : userGroupId
     })
     await msg.save()
-    return msg
+    return msg;
   }
 
   static async sendPhotoMsg(binary , userGroupId){
     const msg = new Message({
       sender : User.currentUser()._id,
-      content : binary,
+      byte : binary,
       type : 'photo',
       userGroupId : userGroupId
     })
     await msg.save()
+    return msg;
   }
 
   static async sendExpirablePhotoMsg(binary, duration, userGroupId){

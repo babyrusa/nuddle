@@ -64,10 +64,7 @@ export default class MessageInput extends Component {
 
     const byteArray = this.b64tobinary(b64Data)
     try {
-      const blobId = uuidv4()
-      console.log(blobId)
-      await userSession.putFile(`files/${blobId}.json`, JSON.stringify(byteArray),{ encrypt: true })
-      const newMessage = await Message.sendPhotoMsg(blobId, this.props.chatRoomId)
+      const newMessage = await Message.sendPhotoMsg(byteArray, this.props.chatRoomId)
       await this.props.sendMessage(newMessage)
     } catch(e){
 

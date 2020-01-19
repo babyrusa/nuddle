@@ -7,23 +7,16 @@ export default class MessageItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataURL : ''
     };
   }
   componentDidMount(){
-    this.toBlob()
   }
-  async toBlob(){
-    const { userSession } = this.props
-    console.log(this.props.msg.attrs.content)
-      const byte = await userSession.getFile(`${this.props.msg.attrs.content}.json`, {decrypt : true})
-      console.log(byte)
-    
-      const blob = new Blob([JSON.parse(byte)], {type: 'image/jpg'});
+  toBlob(){
+    // if(this.props.msg.attrs.byte) {
+      const blob = new Blob([this.props.msg.attrs.byte], {type: 'image/jpg'});
       return  URL.createObjectURL(blob);
-      this.setState({
-        dataURL : URL.createObjectURL(blob)
-      })
+    // }
+    // return ''
 
   }
   render() {
@@ -47,7 +40,7 @@ export default class MessageItem extends Component {
             {msg.attrs.type==='text' && 
           <div>{msg.attrs.content}</div>}
                       {msg.attrs.type==='photo' && 
-          <img src={this.state.dataURL} width="200px"/>}
+          <img src={this.toBlob()} width="200px"/>}
           <small className="timestamp">{TimeStamp.convertDate(msg.attrs.createdAt)}</small>
           </div>
         </div>
