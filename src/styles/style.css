@@ -50,7 +50,7 @@ width: 200px;
 .chat-list-wrapper div{
   padding: 5px;
 }
-.chat-room{
+.chat-room-wrapper{
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -77,9 +77,15 @@ textarea[autoresize] {
   resize: none;
 }
 .msg-body{
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   background-color: lightgrey;
   border-radius: 10px;
+}
+.msg-body .timestamp{
+  font-size: x-small;
+  text-align: right;
 }
 .msg-item{
   display: flex;

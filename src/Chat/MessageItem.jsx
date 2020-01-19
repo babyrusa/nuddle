@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TimeStamp from "../Shared/timestamp";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class MessageItem extends Component {
@@ -18,10 +19,10 @@ export default class MessageItem extends Component {
           />
         </div>
         <div>
-          <i>Nudist</i>
+          <i>{msg.attrs.sender}</i>
           <div className="msg-body">
-          {msg}
-
+          <div>{msg.attrs.content}</div>
+          <small className="timestamp">{TimeStamp.convertDate(msg.attrs.createdAt)}</small>
           </div>
         </div>
       </div>

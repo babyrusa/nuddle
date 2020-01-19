@@ -9,7 +9,7 @@ export default class Chat extends Component {
       selectedFriend: null
     };
   }
-  selectFriend(selectedFriend){
+  selectChat(selectedFriend){
     this.setState({
       selectedFriend : selectedFriend
     })
@@ -17,7 +17,7 @@ export default class Chat extends Component {
   render(){
     return(
       <div className="chat-wrapper">
-        <ChatList selectFriend={this.selectFriend.bind(this)}/>
+        <ChatList selectChat={this.selectChat.bind(this)}/>
         <ChatRoom selectedFriend={this.state.selectedFriend} />
       </div>
     )

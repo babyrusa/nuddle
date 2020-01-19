@@ -52,7 +52,6 @@ export default class CameraModal extends Component {
               className="camera-button"
               onClick={() => { this.takePicture() }}
             >
-              Take Nuddle
             </button>
           </>
         ) : (

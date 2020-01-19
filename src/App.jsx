@@ -85,6 +85,14 @@ export default class App extends Component {
                 />
                 <Route
                   exact
+                  path={`/chat/:chatRoomId`}
+                  exact={true}
+                  render={props => (
+                    <Chat {...props} />
+                  )}
+                />
+                <Route
+                  exact
                   path={`/camera`}
                   exact={true}
                   render={props => (

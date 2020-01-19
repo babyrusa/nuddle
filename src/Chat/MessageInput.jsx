@@ -5,7 +5,7 @@ import "emoji-mart/css/emoji-mart.css";
 import { Camera } from "react-feather";
 import { Link } from "react-router-dom";
 import CameraModal from "../Camera/CameraModal";
-
+import Message from "../models/Message"
 const TEXT_LIMIT = 1000;
 
 export default class MessageInput extends Component {
@@ -13,7 +13,7 @@ export default class MessageInput extends Component {
     super(props);
     this.state = {
       newComment: "",
-      characters: 0,
+      characters: TEXT_LIMIT,
       showEmojiPicker: false,
       cameraModalIsOpen: false
     };
@@ -24,6 +24,10 @@ export default class MessageInput extends Component {
       characters: this.state.characters + 1
     });
   }
+  /**
+   * not being used
+   * @param {*} event 
+   */
   setNewComment(event) {
     // console.log(event.target, event.keyCode, event.key)
     if (this.state.characters < TEXT_LIMIT) {
@@ -35,7 +39,21 @@ export default class MessageInput extends Component {
       }
     }
   }
+  async sendMessage(event){
+    if(event.key === "Enter"){
+      event.preventDefault()
+      try {
+        const newMessage = await Message.sendTextMsg(this.state.newComment, this.props.chatRoomId)
+        await this.props.sendMessage(newMessage)
+        await this.setState({
+          newComment : '',
+          characters: TEXT_LIMIT
+        })
+      } catch(e){
 
+      }
+    }
+  }
   handleChange(event) {
     var appropriateLengthWords = event.target.value.substring(
       0,
@@ -63,19 +81,15 @@ export default class MessageInput extends Component {
   }
 
   b64tobinary(b64Data) {
-    console.log(b64Data)
-
     const byteCharacters = atob(b64Data);
     const byteNumbers = new Array(byteCharacters.length);
     for (let i = 0; i < byteCharacters.length; i++) {
       byteNumbers[i] = byteCharacters.charCodeAt(i);
     }
     const byteArray = new Uint8Array(byteNumbers);
-    console.log(byteArray)
     const blob = new Blob([byteArray], {type: 'image/jpg'});
     const blobUrl = URL.createObjectURL(blob);
     this.props.postPhoto(blobUrl)
-
   }
 
   render() {
@@ -96,7 +110,7 @@ export default class MessageInput extends Component {
               placeholder="Drop a thought..."
               value={this.state.newComment}
               onChange={this.handleChange.bind(this)}
-              // onKeyDown={event => this.postComment(event)}
+              onKeyDown={event => this.sendMessage(event)}
             />
             <div style={{ alignSelf: "flex-end" }}>
               <small>

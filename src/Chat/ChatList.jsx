@@ -1,14 +1,25 @@
 import React, { Component } from "react";
-import { User } from "radiks";
+import { User, UserGroup } from "radiks";
 import NewChat from "./NewChat"
+import ChatListItem from "./ChatListItem"
 const defaultProfile = "/images/butt-profile.jpeg";
 export default class ChatList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       friends: ["Bobby", "Banana", "Boolooloo"],
-      newChatModalIsOpen : false
+      newChatModalIsOpen : false,
+      groups: []
     };
+  }
+  componentDidMount(){
+    this.getMyChats()
+  }
+  async getMyChats(){
+    const groups = await UserGroup.myGroups();
+    this.setState({
+      groups : groups
+    })
   }
   openNewChatModal() {
     this.setState({
@@ -20,6 +31,7 @@ export default class ChatList extends Component {
       newChatModalIsOpen: false
     });
   }
+ 
   render() {
     return (
       <div className="chat-list-wrapper">
@@ -31,22 +43,12 @@ export default class ChatList extends Component {
           closeModal={this.closeNewChatModal.bind(this)}/>
         </div>
         <div className="chat-list">
-          {this.state.friends.map(friend => {
+          {this.state.groups.length === 0 ? 
+          "You don't have any saucy convo yet. Initite some" :
+          this.state.groups.map(group => {
             return (
-              <div className="friend-item">
-                <div style={{ padding: "0px 10px" }}>
-                  <div
-                    className="photos"
-                    style={{
-                      backgroundImage: `url(${defaultProfile})`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat"
-                    }}
-                  />
-                </div>
-                <div>{friend}</div>
-              </div>
+              <ChatListItem group={group}
+              selectChat = {this.props.selectChat}/>
             );
           })}
         </div>
