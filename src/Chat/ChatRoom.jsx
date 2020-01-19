@@ -59,11 +59,7 @@ class ChatRoom extends Component {
       messageList: _messages
     });
   }
-  postPhoto(img) {
-    this.setState({
-      img: img
-    });
-  }
+ 
   render() {
     return (
       <div className="chat-room-wrapper">
@@ -83,7 +79,8 @@ class ChatRoom extends Component {
             </i>
           ) : (
             this.state.messageList.map(msg => {
-              return <MessageItem msg={msg} />;
+              return <MessageItem msg={msg} 
+              userSession = {this.props.userSession}/>;
             })
           )
           // <img src={this.state.img}/>
@@ -91,8 +88,9 @@ class ChatRoom extends Component {
         </div>
 
         <MessageInput
+          userSession={this.props.userSession}
           sendMessage={this.sendMessage.bind(this)}
-          postPhoto={this.postPhoto.bind(this)}
+          // postPhoto={this.postPhoto.bind(this)}
           chatRoomId={this.props.match.params.chatRoomId}
         />
       </div>

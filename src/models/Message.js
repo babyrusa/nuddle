@@ -9,7 +9,11 @@ export default class Message extends Model {
     },
     content: {
       type: String,
-      required : true
+      // required : true
+    },
+    byte: {
+      type: ArrayBuffer,
+      // required : true
     },
     type: {
       type: String, //text, 'image','video','expirable-image'
@@ -40,6 +44,7 @@ export default class Message extends Model {
 
   static async sendPhotoMsg(binary , userGroupId){
     const msg = new Message({
+      sender : User.currentUser()._id,
       content : binary,
       type : 'photo',
       userGroupId : userGroupId

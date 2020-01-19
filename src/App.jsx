@@ -18,7 +18,7 @@ configure({
   apiServer: apiServer,
   userSession
 });
-config.logLevel = 'none'
+// config.logLevel = 'none'
 
 export default class App extends Component {
   
@@ -80,7 +80,9 @@ export default class App extends Component {
                   path={`/chat`}
                   exact={true}
                   render={props => (
-                    <Chat {...props} />
+                    <Chat {...props} 
+                    userSession={userSession}
+                    />
                   )}
                 />
                 <Route
@@ -88,7 +90,9 @@ export default class App extends Component {
                   path={`/chat/:chatRoomId`}
                   exact={true}
                   render={props => (
-                    <Chat {...props} />
+                    <Chat {...props}
+                    userSession={userSession}
+                    />
                   )}
                 />
                 <Route

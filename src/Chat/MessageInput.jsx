@@ -6,6 +6,9 @@ import { Camera } from "react-feather";
 import { Link } from "react-router-dom";
 import CameraModal from "../Camera/CameraModal";
 import Message from "../models/Message"
+
+const uuidv4 = require('uuid/v4');
+
 const TEXT_LIMIT = 1000;
 
 export default class MessageInput extends Component {
@@ -17,6 +20,8 @@ export default class MessageInput extends Component {
       showEmojiPicker: false,
       cameraModalIsOpen: false
     };
+  }
+  componentDidMount(){
   }
   addEmoji(emoji) {
     this.setState({
@@ -54,6 +59,30 @@ export default class MessageInput extends Component {
       }
     }
   }
+  async sendPhoto(b64Data){
+    const {userSession} = this.props;
+
+    const byteArray = this.b64tobinary(b64Data)
+    try {
+      const blobId = uuidv4()
+      console.log(blobId)
+      await userSession.putFile(`files/${blobId}.json`, JSON.stringify(byteArray),{ encrypt: true })
+      const newMessage = await Message.sendPhotoMsg(blobId, this.props.chatRoomId)
+      await this.props.sendMessage(newMessage)
+    } catch(e){
+
+    }
+  }
+  b64tobinary(b64Data) {
+    const byteCharacters = atob(b64Data);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    return new Uint8Array(byteNumbers);
+    // const blob = new Blob([byteArray], {type: 'image/jpg'});
+    // const blobUrl = URL.createObjectURL(blob);
+  }
   handleChange(event) {
     var appropriateLengthWords = event.target.value.substring(
       0,
@@ -80,17 +109,7 @@ export default class MessageInput extends Component {
     });
   }
 
-  b64tobinary(b64Data) {
-    const byteCharacters = atob(b64Data);
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-    const byteArray = new Uint8Array(byteNumbers);
-    const blob = new Blob([byteArray], {type: 'image/jpg'});
-    const blobUrl = URL.createObjectURL(blob);
-    this.props.postPhoto(blobUrl)
-  }
+  
 
   render() {
     return (
@@ -146,7 +165,7 @@ export default class MessageInput extends Component {
         <CameraModal
           modalIsOpen={this.state.cameraModalIsOpen}
           closeModal={this.closeCameraModal.bind(this)}
-          postPhoto={this.b64tobinary.bind(this)}
+          postPhoto={this.sendPhoto.bind(this)}
         />
       </div>
     );

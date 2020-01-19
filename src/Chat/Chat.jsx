@@ -14,11 +14,15 @@ export default class Chat extends Component {
       selectedFriend : selectedFriend
     })
   }
+  componentDidMount(){
+  }
   render(){
     return(
       <div className="chat-wrapper">
         <ChatList selectChat={this.selectChat.bind(this)}/>
-        <ChatRoom selectedFriend={this.state.selectedFriend} />
+        <ChatRoom 
+        userSession={this.props.userSession}
+        selectedFriend={this.state.selectedFriend} />
       </div>
     )
   }
