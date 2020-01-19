@@ -43,7 +43,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="site-wrapper">
-        <div className="site-wrapper-inner">
           {!userSession.isUserSignedIn() ? (
             <Signin
               userSession={userSession}
@@ -52,6 +51,7 @@ export default class App extends Component {
           ) : (
             <React.Fragment>
               <Nav userSession={userSession} />
+              <div className="inner-wrapper">
               <Switch>
                 <Route
                   exact
@@ -93,11 +93,10 @@ export default class App extends Component {
                 />
                 <Redirect to="/"/>
               </Switch>
+              </div>
             </React.Fragment>
           )
-          // <Profile userSession={userSession} handleSignOut={ this.handleSignOut } />
           }
-        </div>
       </div>
     );
   }

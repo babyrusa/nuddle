@@ -31,8 +31,19 @@ export default class FriendSearch extends Component {
       // sender : User.currentUser()._id,
       // recipient : recipient
     });
-    await fr.create();
-    await fr.makeGroupMembership(recipient);
+    await fr.create().then(async (fr) => {
+      
+    });
+    const memberShip = await fr.makeGroupMembership(recipient);
+    console.log(memberShip)
+    console.log(fr)
+    const request = new FriendRequest({
+      sender : User.currentUser()._id,
+      recipient : recipient,
+      userGroupId : fr._id,
+      invitationId : memberShip._id
+    })
+    await request.save()
   }
   render() {
     return (
@@ -40,7 +51,7 @@ export default class FriendSearch extends Component {
         <input
           id="search-input"
           type="text"
-          className="form-control nav-filter"
+          className="form-control friend-search"
           style={{ fontFamily: "Arial, FontAwesome" }}
           placeholder="&#xF002; Search for Nudist"
           value={this.state.input}

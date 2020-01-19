@@ -6,13 +6,19 @@ export default class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedFriend: null
     };
+  }
+  selectFriend(selectedFriend){
+    this.setState({
+      selectedFriend : selectedFriend
+    })
   }
   render(){
     return(
       <div className="chat-wrapper">
-        <ChatList/>
-        <ChatRoom/>
+        <ChatList selectFriend={this.selectFriend.bind(this)}/>
+        <ChatRoom selectedFriend={this.state.selectedFriend} />
       </div>
     )
   }

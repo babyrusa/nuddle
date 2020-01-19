@@ -1,27 +1,44 @@
 
 import React, { Component } from "react";
 import BlockstackUser from "../models/BlockstackUser";
-import { User } from "radiks";
+import { User, UserGroup, GroupInvitation } from "radiks";
 import FriendRequest from "../models/FriendRequest";
+import userGroup from "radiks/lib/models/user-group";
+import ReactLoading from 'react-loading';
+import FriendRequestItem from "./FriendRequestItem";
 
 export default class FriendRequests extends Component {
   constructor(props) {
     super(props);
     this.state = {
       frButtonClicked : false,
-      friendRequests : []
+      friendRequests : [],
+      isLoading : false
     };
   }
   async getFriendRequests(){
     this.setState({
       frButtonClicked : !this.state.frButtonClicked
+    }, async ()=>{
+      if (this.state.frButtonClicked) {
+        this.setState({
+          isloading : true
+        })
+        const _requests = await FriendRequest.fetchList({recipient : User.currentUser()._id}, {decrypt : true});     
+        this.setState({
+          isloading : false
+        })
+        // const invitation = await GroupInvitation.findById(requests[requests.length-1].attrs.invitationId);
+        // await invitation.activate();
+        // const group = await UserGroup.find(requests[requests.length-1].attrs.userGroupId);
+        // console.log(group)
+        this.setState({
+          friendRequests : _requests          
+        })
+         
+      }
     })
-    if (this.state.frButtonClicked) {
-      console.log(User.currentUser()._id)
-      const requests = await FriendRequest.fetchList({recipient : User.currentUser()._id});     
-      console.log(requests)
-       
-    }
+   
 
   }
   render() {
@@ -30,26 +47,22 @@ export default class FriendRequests extends Component {
       <button className="btn" onClick={this.getFriendRequests.bind(this)}>
         <i className="fas fa-users"></i>
       </button>
-      {this.state.frButtonClicked && (this.state.friendRequests.length === 0 ?
+      {this.state.frButtonClicked && (
+      <div className="fr-dropdown">  
+        {this.state.isloading ? 
+        <ReactLoading type={'cylon'} color={'white'} height={100} width={100} />
+        :
+        (this.state.friendRequests.length === 0 ?
       <div>Aw it's okay little boo if noone wanna see your nud</div>
        :
        <ul className="list-group">
        {this.state.friendRequests.map(fr => {
          return (
-           <li className="list-group-item seached-user-li">
-             <div>{fr.attrs.sender} </div>
-             <div>
-               <button className="btn btn-light add-friend-butt">
-                 Accept 
-               </button>
-               <button className="btn btn-light add-friend-butt">
-                 Deny 
-               </button>
-             </div>
-           </li>
+           <FriendRequestItem fr = {fr}/>
          );
        })}
-      </ul>)}
+      </ul>)}</div>)
+      }
      </React.Fragment>
     )
   }

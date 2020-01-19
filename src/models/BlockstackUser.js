@@ -4,9 +4,9 @@ import { User } from 'radiks';
 export default class BlockstackUser extends User {
   static schema = {
     ...User.schema,
-    // name: {
-    //   type: String,
-    //   decrypted: true,
-    // },
+    friends: {
+      type: Array,
+      // decrypted: true,
+    },
   };
 }

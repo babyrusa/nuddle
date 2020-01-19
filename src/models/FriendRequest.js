@@ -1,10 +1,9 @@
-import { UserGroup, Model } from 'radiks';
+import { Model } from 'radiks';
 
 export default class FriendRequest extends Model {
     static className = 'FriendRequest';
     static schema = {
-      // ...UserGroup.schema,
-      sender: { type: String, required : true }, 
+      sender: { type: String, decrypted : true, required : true }, 
       recipient: {type: String, decrypted : true,  required : true },
       userGroupId : {type: String, decrypted : true,  required : true }
     };

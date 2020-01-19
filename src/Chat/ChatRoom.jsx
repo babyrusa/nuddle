@@ -24,10 +24,15 @@ export default class ChatRoom extends Component {
   render() {
     return (
       <div className="chat-room">
-        {this.state.messageList.map(msg => {
+        {!this.props.selectedFriend ? 
+        <div>
+          Select a friend to nuddle
+          </div> : 
+        this.state.messageList.map(msg => {
           return <MessageItem msg={msg}/>
-        })}
-        <img src={this.state.img}/>
+        })
+        // <img src={this.state.img}/>
+      }
         <MessageInput
           postMessage={this.postMessage.bind(this)}
           postPhoto={this.postPhoto.bind(this)}

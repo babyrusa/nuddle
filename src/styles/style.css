@@ -1,5 +1,16 @@
+#root{
+}
 body{
   font-family: "Times New Roman", Times, serif;
+}
+.inner-wrapper{
+  padding: 100px 10px 10px 10px;
+}
+.navbar{
+  position: absolute;
+}
+.friend-search{
+width: 200px;
 }
 /* Avatar */
 .avatar{width:360px;height:360px; border-radius: 50%;}
@@ -18,6 +29,10 @@ body{
 .seached-user-li > div{
   padding : 5px;
 }
+.fr-dropdown{
+  position: absolute;
+  z-index: 1;
+}
 .add-friend-butt{
   border : 1px solid grey;
   border-radius: 30px;
@@ -27,20 +42,28 @@ body{
   display: flex;
 
 }
-.chat-list{
+.chat-list-wrapper{
   width: 200px;
   height: 100vh;
   border-right: lightgrey 1px solid;
 }
-.chat-list div{
+.chat-list-wrapper div{
   padding: 5px;
 }
 .chat-room{
   width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 .friend-item{
   display: flex;
   flex-direction: row;
+  cursor: pointer;
+}
+.friend-item:hover{
+  background-color: rgb(235, 233, 233);
+  border-radius: 20px;
 }
 .photos {
   width: 50px;
@@ -89,4 +112,23 @@ textarea[autoresize] {
   position: absolute;
   top : 50px;
   right : 10px;
+}
+.friend-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  align-items: center;
+
+}
+.friend-list-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.friend-list-name > div{
+  padding: 5px;
+}
+.friend-list-name-name{
+  font-size: x-large;
 }

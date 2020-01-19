@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FriendSearch from './FriendSearch';
 import FriendRequests from './FriendRequests';
+const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class Nav extends Component {
   constructor(props) {
@@ -14,9 +15,9 @@ export default class Nav extends Component {
     const { handleSignOut, userSession } = this.props;
     const { person } = this.state;
     return (
-      <nav className="navbar navbar-dark bg-dark navbar-static-top">
-      <a className="navbar-brand" href="https://blockstack.org">
-        <img src="white-logo.svg" alt=""/>
+      <nav className="navbar navbar-dark navbar-static-top">
+      <a className="navbar-brand" href="https://nuddle.me">
+        <img src={defaultProfile} alt="nuddle logo" width="100px"/>
       </a>
       <button
           className="navbar-toggler"
