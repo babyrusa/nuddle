@@ -44,7 +44,7 @@ export default class FriendRequests extends Component {
   render() {
     return (
       <React.Fragment>
-      <button className="btn" onClick={this.getFriendRequests.bind(this)}>
+      <button className="nav-link btn" onClick={this.getFriendRequests.bind(this)}>
         <i className="fas fa-users"></i>
       </button>
       {this.state.frButtonClicked && (

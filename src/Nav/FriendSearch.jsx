@@ -47,7 +47,7 @@ export default class FriendSearch extends Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <div className="nav-link">
         <input
           id="search-input"
           type="text"
@@ -56,6 +56,7 @@ export default class FriendSearch extends Component {
           placeholder="&#xF002; Search for Nudist"
           value={this.state.input}
           onChange={this.onChangeHandler.bind(this)}
+          onBlur={this.props.closeSearch}
         />
         {this.state.input !== "" && (
           <ul className="list-group" id="filterHashtag">
@@ -73,7 +74,7 @@ export default class FriendSearch extends Component {
             })}
           </ul>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }

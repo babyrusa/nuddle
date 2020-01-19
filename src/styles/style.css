@@ -1,13 +1,26 @@
 #root{
 }
+
+html {
+  --dark : #252631;
+}
 body{
   font-family: "Times New Roman", Times, serif;
 }
 .inner-wrapper{
-  padding: 100px 10px 10px 10px;
+  padding: 0px 10px 10px 10px;
 }
 .navbar{
-  position: absolute;
+  /* position: absolute; */
+  /* width : 100%; */
+  background-color: white !important;
+}
+.navbar a {
+  color : var(--dark);
+}
+.navbar-brand{
+  font-size: 48px;
+  color : #000 !important;
 }
 .friend-search{
 width: 200px;
