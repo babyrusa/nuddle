@@ -44,9 +44,9 @@ class ChatRoom extends Component {
     const messages = await Message.fetchList({
       userGroupId: this.props.match.params.chatRoomId
     });
-    for(let msg of messages) {
-      await msg.destroy()
-    }
+    // for(let msg of messages) {
+    //   await msg.destroy()
+    // }
     this.setState({
       messageList: messages
     });
