@@ -22,8 +22,12 @@ export default class PostCard extends Component {
     const {post} = this.props;
     return (
       <div className="post-card">
+        <div style={{position : 'relative'}}>
+        <div className="post-card-name">
         <PersonTop username={post.attrs.username}/>
+        </div>
         <img src={Photo.toBlob(post.attrs.byteArray)} width="500"/>
+        </div>
         <div>{post.attrs.caption}</div>
       </div>
     );

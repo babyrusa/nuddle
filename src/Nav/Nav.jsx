@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import FriendSearch from "./FriendSearch";
 import FriendRequests from "./FriendRequests";
+import { Menu } from "react-feather";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class Nav extends Component {
@@ -27,7 +28,7 @@ export default class Nav extends Component {
     return (
       <nav className="navbar navbar-expand-md bg-light justify-content-md-center justify-content-start">
         <a className="navbar-brand d-md-none d-inline" href="">
-          Brand
+          Nuddle
         </a>
         <button
           className="navbar-toggler ml-1"
@@ -35,7 +36,8 @@ export default class Nav extends Component {
           data-toggle="collapse"
           data-target="#collapsingNavbar2"
         >
-          <span className="navbar-toggler-icon"></span>
+          <Menu color="#252631"/>
+          {/* <span className="navbar-toggler-icon text-secondary"></span> */}
         </button>
         {this.state.searchOpened ? (
           <FriendSearch closeSearch={this.closeSearch.bind(this)} />
