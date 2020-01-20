@@ -28,7 +28,7 @@ export default class Nav extends Component {
     return (
       <nav className="navbar navbar-expand-md bg-light justify-content-md-center justify-content-start">
         <a className="navbar-brand d-md-none d-inline" href="">
-          Nuddle
+        <img src="/favicon.ico" width="30" height="30" alt=""/>
         </a>
         <button
           className="navbar-toggler ml-1"
