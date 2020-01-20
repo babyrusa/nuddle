@@ -6,6 +6,7 @@ import { Camera } from "react-feather";
 import { Link } from "react-router-dom";
 import CameraModal from "../Camera/CameraModal";
 import Message from "../models/Message"
+import Photo from "../Shared/photo";
 
 const uuidv4 = require('uuid/v4');
 
@@ -62,7 +63,7 @@ export default class MessageInput extends Component {
   async sendPhoto(b64Data){
     const {userSession} = this.props;
 
-    const byteArray = this.b64tobinary(b64Data)
+    const byteArray = Photo.b64tobinary(b64Data)
     try {
       const newMessage = await Message.sendPhotoMsg(byteArray, this.props.chatRoomId)
       await this.props.sendMessage(newMessage)
@@ -70,16 +71,7 @@ export default class MessageInput extends Component {
 
     }
   }
-  b64tobinary(b64Data) {
-    const byteCharacters = atob(b64Data);
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-    return new Uint8Array(byteNumbers);
-    // const blob = new Blob([byteArray], {type: 'image/jpg'});
-    // const blobUrl = URL.createObjectURL(blob);
-  }
+  
   handleChange(event) {
     var appropriateLengthWords = event.target.value.substring(
       0,

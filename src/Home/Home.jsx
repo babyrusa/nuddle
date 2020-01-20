@@ -3,6 +3,7 @@ import { UserGroup } from "radiks/lib";
 import FriendRequest from "../models/FriendRequest";
 import CameraModal from "../Camera/CameraModal";
 import { Camera, EyeOff } from "react-feather";
+import HomeFeed from "./HomeFeed";
 
 export default class Home extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home-wrapper">
+        <HomeFeed/>
         <button
           className="btn home-hide home-button"
         >

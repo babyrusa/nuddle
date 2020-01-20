@@ -81,7 +81,9 @@ export default class CameraModal extends Component {
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
-          {this.state.showSendOption && <NewPost/>}
+          {this.state.showSendOption && 
+          <NewPost img={this.state.img.split(',')[1]}
+          sendPicture={this.sendPicture.bind(this)}/>}
           </React.Fragment>
         )}
       </div>

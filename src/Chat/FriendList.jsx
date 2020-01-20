@@ -16,7 +16,6 @@ export default class FriendList extends Component {
   }
   getFriends(){
     const me = BlockstackUser.findOne({username : User.currentUser()._id}) 
-    console.log(me)
   }
 
   render(){
@@ -48,7 +47,7 @@ export default class FriendList extends Component {
             </div>
             </div>
              <div>
-               <button className="btn btn-light add-friend-butt">
+               <button className="btn btn-light add-friend-butt" onClick={this.props.selectFriend}>
                  Send 
                </button>
              </div>

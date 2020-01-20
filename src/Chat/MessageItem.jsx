@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TimeStamp from "../Shared/timestamp";
 import { UserSession } from "blockstack";
+import Photo from "../Shared/photo";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class MessageItem extends Component {
@@ -11,14 +12,7 @@ export default class MessageItem extends Component {
   }
   componentDidMount(){
   }
-  toBlob(){
-    // if(this.props.msg.attrs.byte) {
-      const blob = new Blob([this.props.msg.attrs.byte], {type: 'image/jpg'});
-      return  URL.createObjectURL(blob);
-    // }
-    // return ''
 
-  }
   render() {
     const {msg} = this.props;
     return (
@@ -40,7 +34,7 @@ export default class MessageItem extends Component {
             {msg.attrs.type==='text' && 
           <div>{msg.attrs.content}</div>}
                       {msg.attrs.type==='photo' && 
-          <img src={this.toBlob()} width="200px"/>}
+          <img src={Photo.toBlob(this.props.msg.attrs.byte)} width="200px"/>}
           <small className="timestamp">{TimeStamp.convertDate(msg.attrs.createdAt)}</small>
           </div>
         </div>

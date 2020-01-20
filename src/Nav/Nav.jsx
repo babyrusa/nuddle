@@ -82,7 +82,7 @@ export default class Nav extends Component {
             </li>
             <li className="nav-item" data-toggle="tooltip" title="Refresh feed">
               <a className="nav-link" href="">
-              <i class="fas fa-sync-alt"></i>
+              <i className="fas fa-sync-alt"></i>
               </a>
             </li>
           </ul>

@@ -190,7 +190,7 @@ textarea[autoresize] {
   background-color: var(--dark);
   color : #fafafa;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-content: center;
   justify-content: center;
 }
@@ -200,13 +200,19 @@ textarea[autoresize] {
   border: 5px solid var(--dark) ;
 }
 .home-camera{
-  position: absolute;
+  position: sticky;
   bottom: 10px;
   right : 20px;
 }
 .home-hide{
-  position: absolute;
+  position: sticky;
   bottom: 10px;
   left : 20px;
  
+}
+.home-wrapper{
+  height: 90vh;
+}
+.home--feed-wrapper{
+  overflow: auto;
 }
