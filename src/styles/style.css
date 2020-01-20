@@ -157,12 +157,12 @@ textarea[autoresize] {
   align-items: center;
 
 }
-.friend-list-name{
+.friend-list-name, .person-top{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.friend-list-name > div{
+.person-top > div{
   padding: 5px;
 }
 .friend-list-name-name{
@@ -200,12 +200,12 @@ textarea[autoresize] {
   border: 5px solid var(--dark) ;
 }
 .home-camera{
-  position: sticky;
+  position: fixed;
   bottom: 10px;
   right : 20px;
 }
 .home-hide{
-  position: sticky;
+  position: fixed;
   bottom: 10px;
   left : 20px;
  
@@ -213,6 +213,8 @@ textarea[autoresize] {
 .home-wrapper{
   height: 90vh;
 }
-.home--feed-wrapper{
-  overflow: auto;
+.home-feed-wrapper{
+display: flex;
+flex-direction: column;
+align-items: center;
 }

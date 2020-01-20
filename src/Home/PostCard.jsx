@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Photo from "../Shared/photo";
+import PersonTop from "../Person/PersonTop";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class PostCard extends Component {
@@ -21,10 +22,9 @@ export default class PostCard extends Component {
     const {post} = this.props;
     return (
       <div className="post-card">
-        <div>{post.attrs.username}</div>
-        <img src={Photo.toBlob(post.attrs.byteArray)} width="200"/>
+        <PersonTop username={post.attrs.username}/>
+        <img src={Photo.toBlob(post.attrs.byteArray)} width="500"/>
         <div>{post.attrs.caption}</div>
-        {/* <img src={this.state.img} width="20"/> */}
       </div>
     );
   }
