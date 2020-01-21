@@ -137,12 +137,19 @@ textarea[autoresize] {
   background-color: white;
   border: 10px solid rgb(231, 231, 231);
   border-radius: 50%;
+  display: flex;
+  /* align-items: center; */
+  align-content: center;
+  justify-content: center;
 }
 .camera-reset{
   position : absolute;
   top: 10px;
-  color: white;
+  /* color: white; */
   left: 10px;
+  /* background-color: white; */
+  /* border: 10px solid rgb(231, 231, 231); */
+  color : var(--dark);
 }
 .emoji-mart {
   z-index: 1;

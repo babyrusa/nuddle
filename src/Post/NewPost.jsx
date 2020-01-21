@@ -15,22 +15,15 @@ class NewPost extends Component {
     super(props);
     this.state = {
       caption : '',
-      blob : ''
     }
   }
-  fakepost(){
-    const {img} = this.props;
-    const byteData = Photo.b64tobinary(img.split(',')[1])
-    console.log(byteData)
-  }
+ 
   post(){
     const {img} = this.props;
     const byteData = Photo.b64tobinary(img)
-    const blob = Photo.toBlob(byteData)
-    this.setState({
-      blob : blob
-    })
+    
     Post.createPost(this.state.caption, byteData).finally(()=> {
+      this.props.closeModal()
       this.props.history.push(`/`)
     });
 
@@ -55,7 +48,6 @@ class NewPost extends Component {
           <button className="btn btn-light bg-salmon" onClick={this.post.bind(this)} data-toggle="tooltip" title="Send as post">
             <Send color={'white'}/></button>
         </div>
-        <img src={this.state.blob} width="100"/>
         <FriendList selectFriend={this.props.sendPicture}/>
       </div>
     )

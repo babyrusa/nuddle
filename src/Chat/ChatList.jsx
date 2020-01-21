@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { User, UserGroup } from "radiks";
 import NewChat from "./NewChat"
 import ChatListItem from "./ChatListItem"
+import { Edit3 } from "react-feather";
 const defaultProfile = "/images/butt-profile.jpeg";
 export default class ChatList extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class ChatList extends Component {
         <div>
           <h1>Chats</h1>
           <button className="btn btn-light" data-toggle="tooltip" title="New chat"
-          onClick={this.openNewChatModal.bind(this)}><i class="fas fa-feather-alt"></i></button>
+          onClick={this.openNewChatModal.bind(this)}><Edit3/></button>
           <NewChat  modalIsOpen={this.state.newChatModalIsOpen}
           closeModal={this.closeNewChatModal.bind(this)}/>
         </div>

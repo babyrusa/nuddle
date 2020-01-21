@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Camera } from "react-feather";
+import { Camera, XCircle, Send } from "react-feather";
 import Webcam from "react-webcam";
 import Modal from 'react-modal';
 import NewPost from "../Post/NewPost";
@@ -34,15 +34,25 @@ export default class CameraModal extends Component {
     const _img = this.cam.current.getScreenshot();
     this.setState({ img: _img, isTakingPicture: false });
   }
+
+  /**
+   * send picture via chat
+   */
   sendPicture(){
     this.props.postPhoto(this.state.img.split(',')[1])
     this.props.closeModal()
   }
+
+  /**
+   * when user ready click show friendlist
+   */
   readyToSend(){
    this.setState({
     showSendOption : true
    }) 
   }
+
+  
   resetPicture(){
     this.setState({ img: null, isTakingPicture: true, showSendOption : false });
   }
@@ -72,18 +82,19 @@ export default class CameraModal extends Component {
               className="btn camera-reset"
               onClick={() => { this.resetPicture() }}
             >
-              <i class="fas fa-times"></i>
+              <XCircle/>
             </button>
             <button
-              className="camera-button"
+              className="camera-button camera-send"
               onClick={() => { this.readyToSend() }}
             >
-              <i class="fas fa-paper-plane"></i>
+              <Send color="rgb(231, 231, 231)"/>
             </button>
           </div>
           {this.state.showSendOption && 
           <NewPost img={this.state.img.split(',')[1]}
-          sendPicture={this.sendPicture.bind(this)}/>}
+          sendPicture={this.sendPicture.bind(this)}
+          closeModal={this.props.closeModal}/>}
           </React.Fragment>
         )}
       </div>

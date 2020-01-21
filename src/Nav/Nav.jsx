@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import FriendSearch from "./FriendSearch";
 import FriendRequests from "./FriendRequests";
-import { Menu } from "react-feather";
+import { Menu, LogOut, RefreshCcw, MessageSquare, Search } from "react-feather";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class Nav extends Component {
@@ -37,13 +37,12 @@ export default class Nav extends Component {
           data-target="#collapsingNavbar2"
         >
           <Menu color="#252631"/>
-          {/* <span className="navbar-toggler-icon text-secondary"></span> */}
         </button>
         {this.state.searchOpened ? (
           <FriendSearch closeSearch={this.closeSearch.bind(this)} />
         ) : (
           <a className="nav-link" onMouseEnter={this.openSearch.bind(this)}>
-            <i className="fa fa-search mr-1"></i>
+            <Search/>
           </a>
         )}
         <div
@@ -79,12 +78,17 @@ export default class Nav extends Component {
 
             <li className="nav-item">
               <Link className="nav-link" to="/chat" data-toggle="tooltip" title="Chat">
-                <i className="far fa-comment-alt"></i>
+                <MessageSquare/>
               </Link>
             </li>
             <li className="nav-item" data-toggle="tooltip" title="Refresh feed">
               <a className="nav-link" href="">
-              <i className="fas fa-sync-alt"></i>
+                <RefreshCcw/>
+              </a>
+            </li>
+            <li className="nav-item" data-toggle="tooltip" title="Refresh feed">
+              <a className="nav-link" href="">
+                <LogOut/>
               </a>
             </li>
           </ul>

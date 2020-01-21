@@ -6,6 +6,7 @@ import FriendRequest from "../models/FriendRequest";
 import userGroup from "radiks/lib/models/user-group";
 import ReactLoading from 'react-loading';
 import FriendRequestItem from "./FriendRequestItem";
+import { UserPlus } from "react-feather";
 
 export default class FriendRequests extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class FriendRequests extends Component {
     return (
       <React.Fragment>
       <button className="nav-link btn" onClick={this.getFriendRequests.bind(this)} data-toggle="tooltip" title="Check friend requests">
-        <i className="fas fa-users"></i>
+        <UserPlus/>
       </button>
       {this.state.frButtonClicked && (
       <div className="fr-dropdown">  
