@@ -238,3 +238,18 @@ align-items: center;
   color : white;
   bottom: 5px;
 }
+
+.hue-picker{
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.hue-horizontal{
+  border-radius: 10px !important;
+  
+}
+.photo-taken{
+  /* position: relative; */
+}

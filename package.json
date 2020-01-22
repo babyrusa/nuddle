@@ -18,6 +18,7 @@
     "moment": "^2.24.0",
     "radiks": "^0.2.2-beta.1",
     "react": "^16.8.6",
+    "react-color": "^2.18.0",
     "react-dom": "^16.8.6",
     "react-feather": "^2.0.3",
     "react-loading": "^2.0.3",
