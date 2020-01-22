@@ -26,7 +26,7 @@ Link: https://nuddle.me
 
 ![Message](https://github.com/babyrusa/nuddle/blob/master/photos/message.png)
 
-![Send](https://github.com/babyrusa/nuddle/blob/master/photos/send.png)
+![Send](https://github.com/babyrusa/nuddle/blob/master/photos/Send.png)
 
 
 ### Future Roadmap
