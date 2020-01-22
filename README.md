@@ -2,6 +2,8 @@
 
 Nuddle is an encrypted photo messaging app for nudist to securely share their nudes publicly or privately without the fear of storing your most private photo on a centralized server, waiting to be leak.
 
+Link: https://nuddle.me
+
 ### Type of users
 
 1. Content Creator (Nudist)
@@ -10,12 +12,17 @@ Nuddle is an encrypted photo messaging app for nudist to securely share their nu
 
 ### Features
 
-### 'User Story'
+### 'User Story / Use case'
 1. Content creator are able upload their nude publicly for everyone to view so that they can gain new followers 
 2. Content creator are able to directly send their nudes to their friends so that they can privately share to people they want to share.
 3. Content creator are able to set an expiry timer for the nudes to self distruct
 4. Content creator are able to create a gallery to store their nudes so that followers are able to see their selected work.
 5. Content creator are able to direct message their follower to chat so that they keep their followe engaged.
+6. Follower are able to follow content creator so that they receive the latest content from them on their feed
+
+
+### Image
+![Feed](https://nuddle.me/photos/feed.png)
 
 
 ### Future Roadmap
@@ -30,6 +37,14 @@ We also have plan to make a react native mobile version of the app that prevents
 1. Radik 
 2. Gaia
 3. Blockstack Auth
+
+
+
+
+
+
+
+
 
 ## Available Scripts
 
