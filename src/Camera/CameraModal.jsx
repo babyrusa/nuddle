@@ -62,7 +62,6 @@ export default class CameraModal extends Component {
   }
 
   _onBackgroundImageDrop(img) {
-    console.log(this._sketch);
     let sketch = this._sketch.current;
     sketch.setBackgroundFromDataUrl(img, {
       stretched: true,
