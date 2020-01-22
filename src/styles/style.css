@@ -241,8 +241,8 @@ align-items: center;
 
 .hue-picker{
 
-  position: absolute;
-  top: 10px;
+  position: absolute !important;
+  top: 40px;
   right: 10px;
 }
 

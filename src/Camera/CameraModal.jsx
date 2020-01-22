@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Camera, XCircle, Send } from "react-feather";
+import { Camera, XCircle, Send, Type } from "react-feather";
 import Webcam from "react-webcam";
 import Modal from "react-modal";
 import NewPost from "../Post/NewPost";
@@ -31,7 +31,8 @@ export default class CameraModal extends Component {
       img: null,
       isTakingPicture: true,
       showSendOption: false,
-      penColor: "#000"
+      penColor: "#000",
+      text: "booloo"
     };
   } //monkey monkey monkey monkey monkey monkey monkey monkey
 
@@ -70,6 +71,10 @@ export default class CameraModal extends Component {
       originX: "left",
       originY: "top"
     });
+  }
+
+  _addText() {
+    this._sketch.current.addText(this.state.text);
   }
 
   setPenColor(color) {
@@ -117,6 +122,13 @@ export default class CameraModal extends Component {
                   }}
                 >
                   <XCircle />
+                  
+                </button>
+                <button
+                  className="btn"
+                  onClick={this._addText.bind(this)}
+                >
+                <Type />
                 </button>
                 <button
                   className="camera-button camera-send"
