@@ -279,4 +279,6 @@ align-items: center;
 }
 #searchedUsers{
   position: absolute;
+  max-height: 500px;
+  overflow: scroll;
 }
