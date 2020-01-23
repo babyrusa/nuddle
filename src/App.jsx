@@ -50,7 +50,8 @@ export default class App extends Component {
             />
           ) : (
             <React.Fragment>
-              <Nav userSession={userSession} />
+              <Nav userSession={userSession}
+              handleSignOut={this.handleSignOut.bind(this)}/>
               <div className="inner-wrapper">
               <Switch>
                 <Route

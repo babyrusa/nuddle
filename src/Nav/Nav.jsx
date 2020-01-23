@@ -82,12 +82,12 @@ export default class Nav extends Component {
               </Link>
             </li>
             <li className="nav-item" data-toggle="tooltip" title="Refresh feed">
-              <a className="nav-link" href="">
+              <a className="nav-link" >
                 <RefreshCcw/>
               </a>
             </li>
             <li className="nav-item" data-toggle="tooltip" title="Refresh feed">
-              <a className="nav-link" href="">
+              <a className="nav-link"onClick={this.props.handleSignOut} >
                 <LogOut/>
               </a>
             </li>

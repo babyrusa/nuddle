@@ -6,17 +6,28 @@ export default class Signin extends Component {
     const { handleSignIn } = this.props;
 
     return (
-      <div className="panel-landing" id="section-1">
-        <h1 className="landing-heading">Hello, Blockstack!</h1>
-        <p className="lead">
+      <div className="panel-landing" >
+        <div className="panel-head">
+
+        <h1 className="landing-heading">Welcome to Nuddle</h1>
+        <i>Nuddle is a secure space where you can share your saucy photos with your mates. 
+          {/* All your private photos are encrypted and only have access by you and the people who you want to share with. */}
+          </i>
+        </div>
+        <div>
+
+        <img src="/images/demo.gif" width="700px"/>
+        </div>
+        <div>
+
           <button
-            className="btn btn-primary btn-lg"
+            className="btn btn-outline-dark btn-lg"
             id="signin-button"
             onClick={ handleSignIn.bind(this) }
           >
-            Sign In with Blockstack
+            Get Naked with Blockstack
           </button>
-        </p>
+          </div>
       </div>
     );
   }
