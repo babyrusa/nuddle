@@ -43,7 +43,7 @@ class NewPost extends Component {
          value={this.state.caption}
          onChange={this.handleChange.bind(this)}></textarea>
         </div>
-        <div>
+        <div className="new-post-send-list">
           <input className="form-control" placeholder="Send as post or Slice thru DM"/>
           <button className="btn btn-light bg-salmon" onClick={this.post.bind(this)} data-toggle="tooltip" title="Send as post">
             <Send color={'white'}/></button>

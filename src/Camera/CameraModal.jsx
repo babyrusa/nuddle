@@ -32,7 +32,7 @@ export default class CameraModal extends Component {
       isTakingPicture: true,
       showSendOption: false,
       penColor: "#000",
-      text: "booloo"
+      text: "Click here to edit text"
     };
   } //monkey monkey monkey monkey monkey monkey monkey monkey
 

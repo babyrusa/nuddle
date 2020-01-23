@@ -133,10 +133,9 @@ textarea[autoresize] {
   padding: 10px;
   width: 200px;
 }
-.camera-wrap{
+.camera-wrap, .new-post-send-list{
   display: flex;
   flex-direction: row;
-  position : relative;
 }
 .camera-button{
   position : absolute;
@@ -262,5 +261,5 @@ align-items: center;
   
 }
 .photo-taken{
-  /* position: relative; */
+  position: relative;
 }
