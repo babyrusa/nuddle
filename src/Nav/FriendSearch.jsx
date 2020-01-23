@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { User, UserGroup } from "radiks";
 import FriendRequest from "../models/FriendRequest";
 import userGroup from "radiks/lib/models/user-group";
+import PersonTop from "../Person/PersonTop";
 
 export default class FriendSearch extends Component {
   constructor(props) {
@@ -58,11 +59,12 @@ export default class FriendSearch extends Component {
           // onMouseLeave={this.props.closeSearch}
         />
         {this.state.input !== "" && (
-          <ul className="list-group" id="filterHashtag">
+          <ul className="list-group" id="searchedUsers">
             {this.state.searchedUsers.map(user => {
               return (
                 <li className="list-group-item seached-user-li">
-                  <div>{user.attrs.username} </div>
+                  <PersonTop username ={user.attrs.username}/>
+                  {/* <div>{user.attrs.username} </div> */}
                   <div>
                     <button className="btn btn-light add-friend-butt" onClick={this.addFriend.bind(this, user.attrs.username)}>
                       Add friend <i class="fas fa-plus"></i>
