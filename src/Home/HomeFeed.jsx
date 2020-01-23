@@ -21,13 +21,23 @@ export default class HomeFeed extends Component {
       })
     })
   }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.cameraModalIsOpen !== this.props.cameraModalIsOpen && !this.props.cameraModalIsOpen) {
+      this.setState({
+        isLoading : true
+      })
+      this.fetchPosts().finally(()=>{
+        this.setState({
+          isLoading : false
+        })
+      })
+    }
+  }
   
   async fetchPosts(){
-    console.log("fetchlist")
-    const posts = await Post.fetchList({});
-    // for(let post of posts) {
-    //   await post.destroy()
-    // }
+    const posts = await Post.fetchList({sort: '-createdAt'});
+    
     this.setState({
       posts : posts
     })
@@ -39,7 +49,7 @@ export default class HomeFeed extends Component {
         <ReactLoading type={'cylon'} color={'grey'} height={100} width={100} />
 
         : (this.state.posts.length === 0 ? 
-        <i>No nudes posted</i> : 
+        <i style={{paddingTop: '10px'}}>No nudes posted</i> : 
         this.state.posts.map(post => {
           return <PostCard post={post}/>
         }))

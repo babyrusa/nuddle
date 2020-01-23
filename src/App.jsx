@@ -18,7 +18,7 @@ configure({
   apiServer: apiServer,
   userSession
 });
-// config.logLevel = 'none'
+config.logLevel = 'none'
 
 export default class App extends Component {
   

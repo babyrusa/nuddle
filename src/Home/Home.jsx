@@ -35,7 +35,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home-wrapper">
-        <HomeFeed/>
+        <HomeFeed cameraModalIsOpen={this.state.cameraModalIsOpen}/>
         <button
           className="btn home-hide home-button"
         >

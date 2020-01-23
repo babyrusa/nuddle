@@ -28,7 +28,6 @@ export default class PersonTop extends Component {
   }
   getProfile() {
     const { username } = this.props;
-    console.log(username)
     lookupProfile(username)
       .then(profile => {
         this.setState({
