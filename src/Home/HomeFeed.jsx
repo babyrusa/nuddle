@@ -23,6 +23,7 @@ export default class HomeFeed extends Component {
   }
   
   async fetchPosts(){
+    console.log("fetchlist")
     const posts = await Post.fetchList({});
     // for(let post of posts) {
     //   await post.destroy()

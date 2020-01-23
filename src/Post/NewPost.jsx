@@ -20,9 +20,9 @@ class NewPost extends Component {
  
   post(){
     const {img} = this.props;
-    const byteData = Photo.b64tobinary(img)
+    // const byteData = Photo.b64tobinary(img.split(",")[1])
     
-    Post.createPost(this.state.caption, byteData).finally(()=> {
+    Post.createPost(this.state.caption, img).finally(()=> {
       this.props.closeModal()
       this.props.history.push(`/`)
     });

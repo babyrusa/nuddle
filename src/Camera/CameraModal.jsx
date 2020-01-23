@@ -141,7 +141,7 @@ export default class CameraModal extends Component {
               </div>
               {this.state.showSendOption && (
                 <NewPost
-                  img={this.state.img.split(",")[1]}
+                  img={this.state.img}
                   sendPhoto={this.sendPhoto.bind(this)}
                   closeModal={this.props.closeModal}
                 />

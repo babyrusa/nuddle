@@ -26,7 +26,7 @@ export default class PostCard extends Component {
         <div className="post-card-name">
         <PersonTop username={post.attrs.username}/>
         </div>
-        <img src={Photo.toBlob(post.attrs.byteArray)} width="500"/>
+        <img src={(post.attrs.base64)} width="500"/>
         </div>
         <div>{post.attrs.caption}</div>
       </div>
