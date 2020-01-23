@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { User } from "radiks";
 import { Person, lookupProfile } from "blockstack";
 import groupInvitation from "radiks/lib/models/group-invitation";
+import PersonTop from "../Person/PersonTop";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class FriendRequestItem extends Component {
@@ -43,20 +44,8 @@ export default class FriendRequestItem extends Component {
 
     return(
         <li className="list-group-item seached-user-li">
-          {/* <div> */}
-            <div>
-            <div
-                    className="photos"
-                    style={{
-                      backgroundImage: `url(${defaultProfile})`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat"
-                    }}
-                  />
-            </div>
-            <div>
-            <div>{fr.attrs.sender} </div>
+            
+            <PersonTop username={fr.attrs.sender}/>
              <div>
                <button className="btn btn-light add-friend-butt" onClick={this.acceptFR.bind(this)}>
                  Accept 
@@ -65,8 +54,6 @@ export default class FriendRequestItem extends Component {
                  Deny 
                </button>
              </div>
-            </div>
-          {/* </div> */}
            
            </li>
     )

@@ -56,7 +56,7 @@ export default class FriendRequests extends Component {
         (this.state.friendRequests.length === 0 ?
       <div>Aw it's okay little boo if noone wanna see your nud</div>
        :
-       <ul className="list-group">
+       <ul className="list-group friend-request-list">
        {this.state.friendRequests.map(fr => {
          return (
            <FriendRequestItem fr = {fr}/>

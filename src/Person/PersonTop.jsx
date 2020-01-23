@@ -45,7 +45,7 @@ export default class PersonTop extends Component {
           <div
             className="photos"
             style={{
-              backgroundImage: `url(${person.avatarUrl()})`,
+              backgroundImage: `url(${person.avatarUrl() ? person.avatarUrl() : defaultProfile})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat"

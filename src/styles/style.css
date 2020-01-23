@@ -59,6 +59,10 @@ width: 200px;
 .seached-user-li > div{
   padding : 5px;
 }
+.friend-request-list{
+  left: -200px;
+  position: absolute;
+}
 .fr-dropdown{
   position: absolute;
   z-index: 1;
