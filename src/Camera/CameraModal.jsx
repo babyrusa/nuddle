@@ -47,8 +47,8 @@ export default class CameraModal extends Component {
   /**
    * send picture via chat
    */
-  sendPicture() {
-    this.props.postPhoto(this.state.img.split(",")[1]);
+  sendPhoto(chatRoomId) {
+    this.props.sendPhoto(this.state.img.split(",")[1], chatRoomId);
     this.props.closeModal();
   }
 
@@ -142,7 +142,7 @@ export default class CameraModal extends Component {
               {this.state.showSendOption && (
                 <NewPost
                   img={this.state.img.split(",")[1]}
-                  sendPicture={this.sendPicture.bind(this)}
+                  sendPhoto={this.sendPhoto.bind(this)}
                   closeModal={this.props.closeModal}
                 />
               )}

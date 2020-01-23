@@ -48,7 +48,7 @@ class NewPost extends Component {
           <button className="btn btn-light bg-salmon" onClick={this.post.bind(this)} data-toggle="tooltip" title="Send as post">
             <Send color={'white'}/></button>
         </div>
-        <FriendList selectFriend={this.props.sendPicture}/>
+        <FriendList sendPhoto={this.props.sendPhoto}/>
       </div>
     )
   }

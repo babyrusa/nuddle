@@ -8,7 +8,6 @@ export default class ChatList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      friends: ["Bobby", "Banana", "Boolooloo"],
       newChatModalIsOpen : false,
       groups: []
     };
@@ -18,8 +17,14 @@ export default class ChatList extends Component {
   }
   async getMyChats(){
     const groups = await UserGroup.myGroups();
+    let finalGroups = [];
+    for(let group of groups){
+      if (group.attrs.members.length === 2){
+        finalGroups.push(group);
+      }
+    }
     this.setState({
-      groups : groups
+      groups : finalGroups
     })
   }
   openNewChatModal() {
@@ -37,13 +42,14 @@ export default class ChatList extends Component {
     return (
       <div className="chat-list-wrapper">
         <div>
-          <div className="chat-header">
+          <h1>Chats</h1>
+          {/* <div className="chat-header">
           <p>Chats</p>
           <button className="btn btn-light" data-toggle="tooltip" title="New chat"
           onClick={this.openNewChatModal.bind(this)}><Edit3/></button>
           </div>
           <NewChat  modalIsOpen={this.state.newChatModalIsOpen}
-          closeModal={this.closeNewChatModal.bind(this)}/>
+          closeModal={this.closeNewChatModal.bind(this)}/> */}
         </div>
         <div className="chat-list">
           {this.state.groups.length === 0 ? 

@@ -60,12 +60,13 @@ export default class MessageInput extends Component {
       }
     }
   }
-  async sendPhoto(b64Data){
+  async sendPhoto(b64Data, chatRoomId){
+    console.log(chatRoomId)
     const {userSession} = this.props;
 
     const byteArray = Photo.b64tobinary(b64Data)
     try {
-      const newMessage = await Message.sendPhotoMsg(byteArray, this.props.chatRoomId)
+      const newMessage = await Message.sendPhotoMsg(byteArray, chatRoomId)
       await this.props.sendMessage(newMessage)
     } catch(e){
 
@@ -154,7 +155,7 @@ export default class MessageInput extends Component {
         <CameraModal
           modalIsOpen={this.state.cameraModalIsOpen}
           closeModal={this.closeCameraModal.bind(this)}
-          postPhoto={this.sendPhoto.bind(this)}
+          sendPhoto={this.sendPhoto.bind(this)}
         />
       </div>
     );

@@ -14,6 +14,14 @@ class ChatRoom extends Component {
       img: "",
       isLoading: false
     };
+    const messageCallBack = message => {
+      if (
+        message.attrs.userGroupId === this.props.match.params.chatRoomId
+      ) {
+        this.fetchMessages();
+      }
+    };
+    Message.addStreamListener(messageCallBack.bind(this));
   }
   componentDidMount() {
     if (this.props.match.params.chatRoomId) {

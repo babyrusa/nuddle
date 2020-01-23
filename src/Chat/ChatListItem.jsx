@@ -25,11 +25,11 @@ export default class ChatListItem extends Component {
   getGroupHead(){
     const { group } = this.props;
 
-    if (group.attrs.members[0].username === User.currentUser()._id) {
+    if (group && group.attrs.members[0].username === User.currentUser()._id) {
       this.setState({
         friendName : group.attrs.members[1].username
       })
-    } else {
+    } else if (group){
       this.setState({
         friendName : group.attrs.members[0].username
       })
