@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { User } from "radiks";
 import { Person, lookupProfile } from "blockstack";
+import groupInvitation from "radiks/lib/models/group-invitation";
 const defaultProfile = "/images/butt-profile.jpeg";
 
 export default class FriendRequestItem extends Component {
@@ -32,9 +33,10 @@ export default class FriendRequestItem extends Component {
       .catch(error => {
       });
   }
-  acceptFR(){
+  async acceptFR(){
     const {fr} = this.props;
-
+    const invitation = await groupInvitation.findById(fr.attrs.invitationId);
+    await invitation.activate();
   }
   render(){
     const {fr} = this.props;
@@ -56,7 +58,7 @@ export default class FriendRequestItem extends Component {
             <div>
             <div>{fr.attrs.sender} </div>
              <div>
-               <button className="btn btn-light add-friend-butt">
+               <button className="btn btn-light add-friend-butt" onClick={this.acceptFR.bind(this)}>
                  Accept 
                </button>
                <button className="btn btn-light add-friend-butt">

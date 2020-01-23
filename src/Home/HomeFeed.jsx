@@ -15,11 +15,11 @@ export default class HomeFeed extends Component {
     this.setState({
       isLoading : true
     })
-    this.fetchPosts().finally(()=>{
-      this.setState({
-        isLoading : false
-      })
-    })
+    // this.fetchPosts().finally(()=>{
+    //   this.setState({
+    //     isLoading : false
+    //   })
+    // })
   }
   
   async fetchPosts(){

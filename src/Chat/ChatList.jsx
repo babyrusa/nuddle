@@ -37,9 +37,11 @@ export default class ChatList extends Component {
     return (
       <div className="chat-list-wrapper">
         <div>
-          <h1>Chats</h1>
+          <div className="chat-header">
+          <p>Chats</p>
           <button className="btn btn-light" data-toggle="tooltip" title="New chat"
           onClick={this.openNewChatModal.bind(this)}><Edit3/></button>
+          </div>
           <NewChat  modalIsOpen={this.state.newChatModalIsOpen}
           closeModal={this.closeNewChatModal.bind(this)}/>
         </div>

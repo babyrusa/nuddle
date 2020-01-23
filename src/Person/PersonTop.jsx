@@ -10,7 +10,7 @@ export default class PersonTop extends Component {
     this.state = {
       person: {
         name() {
-          return "Anonymous";
+          return "Nudist";
         },
         avatarUrl() {
           return defaultProfile;
@@ -21,9 +21,14 @@ export default class PersonTop extends Component {
   componentDidMount() {
     this.getProfile();
   }
+  componentDidUpdate(prevProps) {
+    if(prevProps.username !== this.props.username){
+      this.getProfile();
+    }
+  }
   getProfile() {
     const { username } = this.props;
-
+    console.log(username)
     lookupProfile(username)
       .then(profile => {
         this.setState({

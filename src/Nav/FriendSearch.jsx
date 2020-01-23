@@ -28,8 +28,6 @@ export default class FriendSearch extends Component {
     console.log(recipient)
     const fr = new UserGroup({
       name : 'FriendRequest', 
-      // sender : User.currentUser()._id,
-      // recipient : recipient
     });
     await fr.create().then(async (fr) => {
       
@@ -56,7 +54,7 @@ export default class FriendSearch extends Component {
           placeholder="&#xF002; Search for Nudist"
           value={this.state.input}
           onChange={this.onChangeHandler.bind(this)}
-          onBlur={this.props.closeSearch}
+          // onBlur={this.props.closeSearch}
           // onMouseLeave={this.props.closeSearch}
         />
         {this.state.input !== "" && (
