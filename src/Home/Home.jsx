@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { UserGroup } from "radiks/lib";
-import FriendRequest from "../models/FriendRequest";
-import CameraModal from "../Camera/CameraModal";
-import { Camera, EyeOff } from "react-feather";
-import HomeFeed from "./HomeFeed";
+import React, { Component } from 'react';
+import { UserGroup } from 'radiks/lib';
+import FriendRequest from '../models/FriendRequest';
+import CameraModal from '../Camera/CameraModal';
+import { Camera, EyeOff } from 'react-feather';
+import HomeFeed from './HomeFeed';
+import HomeMessage from './HomeMessage';
 
 export default class Home extends Component {
   constructor(props) {
@@ -34,25 +35,31 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="home-wrapper">
-        <HomeFeed cameraModalIsOpen={this.state.cameraModalIsOpen}/>
-        <button
-          className="btn home-hide home-button"
-        >
-          <EyeOff size="24" />
-        </button>
-       
-        <button
-          className="btn home-camera home-button"
-          onClick={this.openCameraModal.bind(this)}
-        >
-          <Camera size="24" />
-        </button>
-        <CameraModal
-          modalIsOpen={this.state.cameraModalIsOpen}
-          closeModal={this.closeCameraModal.bind(this)}
-          //  postPhoto={this.sendPhoto.bind(this)}
-        />
+      <div className='home-wrapper container-fluid'>
+        <div className='row'>
+          <div className='col-md-9'>
+            <HomeFeed cameraModalIsOpen={this.state.cameraModalIsOpen} />
+          </div>
+          <div className='col-md-3'>
+            <HomeMessage />
+          </div>
+
+          <button className='btn home-hide home-button'>
+            <EyeOff size='24' />
+          </button>
+
+          <button
+            className='btn home-camera home-button'
+            onClick={this.openCameraModal.bind(this)}
+          >
+            <Camera size='24' />
+          </button>
+          <CameraModal
+            modalIsOpen={this.state.cameraModalIsOpen}
+            closeModal={this.closeCameraModal.bind(this)}
+            //  postPhoto={this.sendPhoto.bind(this)}
+          />
+        </div>
       </div>
     );
   }
