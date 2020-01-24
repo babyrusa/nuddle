@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { User } from 'radiks';
 import { Person, lookupProfile } from 'blockstack';
 import BlockstackUser from '../models/BlockstackUser';
-const defaultProfile = '/images/butt-profile.jpeg';
+const defaultProfile = '/images/logo.jpg';
 
 export default class PersonTop extends Component {
   constructor(props) {

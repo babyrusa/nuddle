@@ -3,7 +3,7 @@ import { User } from "radiks";
 import { Person, lookupProfile } from "blockstack";
 import groupInvitation from "radiks/lib/models/group-invitation";
 import PersonTop from "../Person/PersonTop";
-const defaultProfile = "/images/butt-profile.jpeg";
+const defaultProfile = "/images/logo.jpg";
 
 export default class FriendRequestItem extends Component {
   constructor(props) {

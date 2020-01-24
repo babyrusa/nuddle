@@ -48,8 +48,8 @@ export default class FriendSearch extends Component {
           id='search-input'
           type='text'
           className='form-control friend-search'
-          style={{ fontFamily: 'Arial, FontAwesome' }}
-          placeholder='&#xF002; Search for Nudist'
+          // style={{ fontFamily: 'Arial, FontAwesome' }}
+          placeholder='Search for Nudist'
           value={this.state.input}
           onChange={this.onChangeHandler.bind(this)}
           // onBlur={this.props.closeSearch}
@@ -61,7 +61,6 @@ export default class FriendSearch extends Component {
               return (
                 <li className='list-group-item m-0 p-0 seached-user-li'>
                   <PersonTop username={user.attrs.username} />
-                  {/* <div>{user.attrs.username} </div> */}
                   <div>
                     <button
                       className='btn btn-light add-friend-butt'

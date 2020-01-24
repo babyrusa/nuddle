@@ -12,11 +12,11 @@ import CameraModal from './Camera/CameraModal.jsx';
 
 const appConfig = new AppConfig(['store_write', 'publish_data']);
 const userSession = new UserSession({ appConfig: appConfig });
-const apiServer = 'https://nuddle-server.herokuapp.com';
+// const apiServer = 'https://nuddle-server.herokuapp.com';
 
-// process.env.NODE_ENV === 'development'
-//   ? 'http://localhost:5000'
-//   : 'https://nuddle-server.herokuapp.com';
+const apiServer = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:5000'
+  : 'https://nuddle-server.herokuapp.com';
 configure({
   apiServer: apiServer,
   userSession

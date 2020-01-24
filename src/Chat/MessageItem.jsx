@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TimeStamp from "../Shared/timestamp";
 import { UserSession } from "blockstack";
 import Photo from "../Shared/photo";
-const defaultProfile = "/images/butt-profile.jpeg";
+const defaultProfile = "/images/logo.jpg";
 
 export default class MessageItem extends Component {
   constructor(props) {
