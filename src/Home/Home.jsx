@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { UserGroup } from "radiks/lib";
 import FriendRequest from "../models/FriendRequest";
 import CameraModal from "../Camera/CameraModal";
-import { Camera, EyeOff } from "react-feather";
+import { Camera, EyeOff, Eye } from "react-feather";
 import HomeFeed from "./HomeFeed";
 import HomeMessage from "./HomeMessage";
 
@@ -44,16 +44,25 @@ export default class Home extends Component {
           {/* <div className="col-md-3">
             <HomeMessage />
           </div> */}
-
-          <button
-            className="btn home-hide home-button"
-            data-toggle="tooltip"
-            title={this.state.hidden ? "Show saucy pics" : "Hide Saucy Pics"}
-            onClick={this.onHide.bind(this)}
-          >
-            <EyeOff size="24" />
-          </button>
-
+          {this.state.hidden ? (
+            <button
+              className="btn home-hide home-button"
+              data-toggle="tooltip"
+              title="Show Saucy Pics"
+              onClick={this.onHide.bind(this)}
+            >
+              <Eye size="24" />
+            </button>
+          ) : (
+            <button
+              className="btn home-hide home-button"
+              data-toggle="tooltip"
+              title="Hide Saucy Pics"
+              onClick={this.onHide.bind(this)}
+            >
+              <EyeOff size="24" />
+            </button>
+          )}
           <button
             className="btn home-camera home-button"
             data-toggle="tooltip"
