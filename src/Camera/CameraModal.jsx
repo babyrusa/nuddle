@@ -56,7 +56,9 @@ export default class CameraModal extends Component {
    * when user ready click show friendlist
    */
   readyToSend() {
+    const _img = this._sketch.current.toDataURL();
     this.setState({
+      img : _img,
       showSendOption: true
     });
   }

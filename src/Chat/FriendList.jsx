@@ -34,7 +34,6 @@ export default class FriendList extends Component {
   }
 
   sendPhoto(group){
-    console.log(group)
     this.props.sendPhoto(group.attrs._id)
   }
   render() {

@@ -31,8 +31,6 @@ export default class FriendSearch extends Component {
     });
     await fr.create().then(async fr => {});
     const memberShip = await fr.makeGroupMembership(recipient);
-    console.log(memberShip);
-    console.log(fr);
     const request = new FriendRequest({
       sender: User.currentUser()._id,
       recipient: recipient,

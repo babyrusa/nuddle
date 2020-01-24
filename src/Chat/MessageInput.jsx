@@ -35,7 +35,6 @@ export default class MessageInput extends Component {
    * @param {*} event 
    */
   setNewComment(event) {
-    // console.log(event.target, event.keyCode, event.key)
     if (this.state.characters < TEXT_LIMIT) {
       this.setState({
         newComment: event.target.value,
@@ -61,7 +60,6 @@ export default class MessageInput extends Component {
     }
   }
   async sendPhoto(b64Data, chatRoomId){
-    console.log(chatRoomId)
     const {userSession} = this.props;
 
     const byteArray = Photo.b64tobinary(b64Data)
