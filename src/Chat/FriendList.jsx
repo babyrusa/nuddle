@@ -5,7 +5,7 @@ import BlockstackUser from "../models/BlockstackUser";
 import PersonTop from "../Person/PersonTop";
 import ChatListItem from "./ChatListItem";
 import userGroup from "radiks/lib/models/user-group";
-const defaultProfile = "/images/butt-profile.jpeg";
+const defaultProfile = "/images/logo.jpg";
 
 export default class FriendList extends Component {
   constructor(props) {

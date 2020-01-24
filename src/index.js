@@ -5,6 +5,6 @@ import App from './App.jsx';
 
 // Require Sass file so webpack can build it
 import 'bootstrap/dist/css/bootstrap.css';
-import'./styles/style.css';
+import'./styles/style.scss';
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));

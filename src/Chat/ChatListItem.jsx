@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { User, UserGroup } from "radiks";
 import { Link } from "react-router-dom";
 import PersonTop from "../Person/PersonTop";
-const defaultProfile = "/images/butt-profile.jpeg";
+const defaultProfile = "/images/logo.jpg";
 export default class ChatListItem extends Component {
   constructor(props) {
     super(props);

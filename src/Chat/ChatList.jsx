@@ -3,7 +3,7 @@ import { User, UserGroup } from "radiks";
 import NewChat from "./NewChat"
 import ChatListItem from "./ChatListItem"
 import { Edit3 } from "react-feather";
-const defaultProfile = "/images/butt-profile.jpeg";
+const defaultProfile = "/images/logo.jpg";
 export default class ChatList extends Component {
   constructor(props) {
     super(props);

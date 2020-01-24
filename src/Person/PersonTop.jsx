@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { User } from "radiks";
-import { Person, lookupProfile } from "blockstack";
-import BlockstackUser from "../models/BlockstackUser";
-const defaultProfile = "/images/butt-profile.jpeg";
+import React, { Component } from 'react';
+import { User } from 'radiks';
+import { Person, lookupProfile } from 'blockstack';
+import BlockstackUser from '../models/BlockstackUser';
+const defaultProfile = '/images/logo.jpg';
 
 export default class PersonTop extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class PersonTop extends Component {
     this.state = {
       person: {
         name() {
-          return "Nudist";
+          return 'Nudist';
         },
         avatarUrl() {
           return defaultProfile;
@@ -22,7 +22,7 @@ export default class PersonTop extends Component {
     this.getProfile();
   }
   componentDidUpdate(prevProps) {
-    if(prevProps.username !== this.props.username){
+    if (prevProps.username !== this.props.username) {
       this.getProfile();
     }
   }
@@ -41,21 +41,23 @@ export default class PersonTop extends Component {
     const { username } = this.props;
 
     return (
-        <div className="person-top">
-          <div
-            className="photos"
-            style={{
-              backgroundImage: `url(${person.avatarUrl() ? person.avatarUrl() : defaultProfile})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat"
-            }}
-          />
-          <div>
-            <div className="person-top-name">{person.name()}</div>
-            <div className="person-top-username">{username}</div>
-          </div>
+      <div className='person-top'>
+        <div
+          className='photos'
+          style={{
+            backgroundImage: `url(${
+              person.avatarUrl() ? person.avatarUrl() : defaultProfile
+            })`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        <div>
+          <div className='person-top-name text-truncate'>{person.name()}</div>
+          <div className='person-top-username'>{username}</div>
         </div>
+      </div>
     );
   }
 }
