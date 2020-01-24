@@ -45,9 +45,10 @@ We also have plan to make a react native mobile version of the app that prevents
 
 ### Blockstack used
 
-1. Radik 
+1. BlockstackJS 
 2. Gaia
-3. Blockstack Auth
+3. Radiks
+4. Blockstack Auth
 
 
 
