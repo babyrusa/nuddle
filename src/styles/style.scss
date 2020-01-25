@@ -372,6 +372,7 @@ textarea[autoresize] {
 .masonry-item,
 .masonry-content {
   overflow: hidden !important;
+  min-width: 100%;
 }
 .masonry-item {
   margin-bottom: 1rem;

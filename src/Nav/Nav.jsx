@@ -78,6 +78,37 @@ export default class Nav extends Component {
           </ul>
           <ul className="nav navbar-nav col-md-7  flex-nowrap">
             <div className="d-flex col justify-content-end">
+            <li>
+                  {this.state.searchOpened ? (
+                    <FriendSearch closeSearch={this.closeSearch.bind(this)} />
+                  ) : (
+                    <div
+                      className="nav-link"
+                      onMouseEnter={this.openSearch.bind(this)}
+                    >
+                      <Search />
+                    </div>
+                  )}
+                </li>
+                <li
+                  className="nav-item"
+                  data-toggle="tooltip"
+                  title="Friend Requests"
+                >
+                  <FriendRequests/>
+                  {/* <div className="nav-link" onClick={this.props.handleSignOut}>
+                    <Edit />
+                  </div> */}
+                </li>
+              
+              </div>
+
+            <div className="d-flex col-md-6 justify-content-between align-items-center">
+              {/* <div className="d-flex justify-content-center align-items-center">
+                <ArrowLeft />
+                <span className="ml-2">Messages</span>{" "}
+              </div> */}
+              <div className="d-flex">
               <li className="nav-item">
                 <Link
                   className="nav-link"
@@ -102,36 +133,8 @@ export default class Nav extends Component {
                   <LogOut />
                 </a>
               </li>
-            </div>
-
-            <div className="d-flex col-md-6 justify-content-between align-items-center">
-              {/* <div className="d-flex justify-content-center align-items-center">
-                <ArrowLeft />
-                <span className="ml-2">Messages</span>{" "}
-              </div> */}
-              <div className="d-flex">
-                <li>
-                  {this.state.searchOpened ? (
-                    <FriendSearch closeSearch={this.closeSearch.bind(this)} />
-                  ) : (
-                    <div
-                      className="nav-link"
-                      onMouseEnter={this.openSearch.bind(this)}
-                    >
-                      <Search />
-                    </div>
-                  )}
-                </li>
-                {/* <li
-                  className="nav-item"
-                  data-toggle="tooltip"
-                  title="Refresh feed"
-                >
-                  <div className="nav-link" onClick={this.props.handleSignOut}>
-                    <Edit />
-                  </div>
-                </li> */}
-              </div>
+            
+               </div>
             </div>
           </ul>
         </div>
