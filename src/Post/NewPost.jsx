@@ -21,7 +21,10 @@ class NewPost extends Component {
   post(){
     const {img} = this.props;
     // const byteData = Photo.b64tobinary(img.split(",")[1])
-    
+    // const blobId = uuidv4()
+
+    // await userSession.putFile(`files/${blobId}.json`, JSON.stringify(byteArray),{ encrypt: true })
+
     Post.createPost(this.state.caption, img).finally(()=> {
       this.props.closeModal()
       this.props.history.push(`/`)

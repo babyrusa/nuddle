@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { User, UserGroup } from 'radiks';
+import { User, UserGroup, GroupMembership } from 'radiks';
 import FriendRequest from '../models/FriendRequest';
 import userGroup from 'radiks/lib/models/user-group';
 import PersonTop from '../Person/PersonTop';
@@ -25,11 +25,19 @@ export default class FriendSearch extends Component {
       });
     }
   }
-  async addFriend(recipient) {
+async addFriend(recipient) {
     const fr = new UserGroup({
       name: 'FriendRequest'
     });
-    await fr.create().then(async fr => {});
+    await fr.create();
+const groupMembership = new GroupMembership({
+          userGroupId: fr._id,
+          username: User.currentUser()._id,
+          signingKeyPrivateKey: fr.privateKey,
+          signingKeyId: fr.attrs.signingKeyId,
+        });
+
+    await groupMembership.save();
     const memberShip = await fr.makeGroupMembership(recipient);
     const request = new FriendRequest({
       sender: User.currentUser()._id,

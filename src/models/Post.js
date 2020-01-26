@@ -22,7 +22,12 @@ export default class Post extends Model {
       type: String,
       decrypted : true,
       required : true
-    }
+    },
+    // address: {
+    //   type: String, //Gaia address
+    //   decrypted : true,
+    //   required : true
+    // }
     // userGroupId: {
     //   type: String,
     //   decrypted: true,
