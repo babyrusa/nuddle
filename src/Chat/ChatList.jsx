@@ -17,6 +17,7 @@ export default class ChatList extends Component {
   }
   async getMyChats(){
     const groups = await UserGroup.myGroups();
+    console.log(groups)
     let finalGroups = [];
     for(let group of groups){
       if (group.attrs.members.length === 2){

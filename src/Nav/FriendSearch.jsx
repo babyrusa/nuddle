@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { User, UserGroup } from 'radiks';
+import { User, UserGroup, GroupInvitation } from 'radiks';
 import FriendRequest from '../models/FriendRequest';
 import userGroup from 'radiks/lib/models/user-group';
 import PersonTop from '../Person/PersonTop';
@@ -38,6 +38,9 @@ export default class FriendSearch extends Component {
       invitationId: memberShip._id
     });
     await request.save();
+
+    const invitation = await GroupInvitation.findById(memberShip._id);
+    await invitation.activate();
   }
   render() {
     return (
