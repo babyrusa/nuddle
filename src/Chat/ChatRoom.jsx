@@ -91,7 +91,6 @@ class ChatRoom extends Component {
               userSession = {this.props.userSession}/>;
             })
           )
-          // <img src={this.state.img}/>
           }
         </div>
 
