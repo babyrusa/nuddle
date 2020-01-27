@@ -76,8 +76,8 @@ class ChatRoom extends Component {
             <div>Select a friend to nuddle</div>
           ) : this.state.isLoading ? (
             <ReactLoading
-              type={"cylon"}
-              color={"grey"}
+              type={"spinningBubbles"}
+              color={"salmon"}
               height={100}
               width={100}
             />

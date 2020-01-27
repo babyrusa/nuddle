@@ -64,8 +64,8 @@ export default class HomeFeed extends Component {
           <div class="masonry">
             {this.state.isLoading ? (
               <ReactLoading
-                type={"cylon"}
-                color={"grey"}
+                type={"spinningBubbles"}
+                color={"salmon"}
                 height={100}
                 width={100}
               />

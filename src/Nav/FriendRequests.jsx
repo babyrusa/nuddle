@@ -51,7 +51,7 @@ export default class FriendRequests extends Component {
       {this.state.frButtonClicked && (
       <div className="fr-dropdown">  
         {this.state.isloading ? 
-        <ReactLoading type={'cylon'} color={'white'} height={100} width={100} />
+        <ReactLoading type={'spinningBubbles'} color={'salmon'} height={100} width={100} />
         :
         (this.state.friendRequests.length === 0 ?
       <div>Aw it's okay little boo if noone wanna see your nud</div>
