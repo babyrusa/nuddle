@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import NewPost from "../Post/NewPost";
 import { SketchField, Tools } from "react-sketch";
 import CameraTools from "./CameraTools";
+import ReactLoading from "react-loading";
 
 Modal.setAppElement("body");
 
@@ -16,7 +17,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    padding: "0px"
+    padding: "0px",
+    cameraReady: false
     // width : '100%',
     // height: '100%'
   }
@@ -58,7 +60,7 @@ export default class CameraModal extends Component {
   readyToSend() {
     const _img = this._sketch.current.toDataURL();
     this.setState({
-      img : _img,
+      img: _img,
       showSendOption: true
     });
   }
@@ -86,18 +88,45 @@ export default class CameraModal extends Component {
   resetPicture() {
     this.setState({ img: null, isTakingPicture: true, showSendOption: false });
   }
+  onUserMedia() {
+    this.setState({
+      cameraReady: true
+    });
+  }
+  closeModal() {
+    this.setState({
+      cameraReady: false
+    });
+    this.resetPicture();
+    this.props.closeModal();
+  }
   render() {
     return (
       <Modal
         isOpen={this.props.modalIsOpen}
-        onRequestClose={this.props.closeModal}
+        onRequestClose={this.closeModal.bind(this)}
         style={customStyles}
         contentLabel="Camera"
       >
         <div className="camera-wrap">
+          {!this.state.cameraReady ? (
+            <div className="loading-wrapper" style={{width : '100%'}}>
+              <ReactLoading
+                type={"spinningBubbles"}
+                color={"salmon"}
+                height={100}
+                width={100}
+              />
+              Getting camera ready
+            </div>
+          ) : null}
           {this.state.isTakingPicture ? (
             <>
-              <Webcam ref={this.cam} mirrored={true} />
+              <Webcam
+                ref={this.cam}
+                mirrored={true}
+                onUserMedia={this.onUserMedia.bind(this)}
+              />
               <button
                 className="camera-button"
                 onClick={() => {
@@ -123,13 +152,9 @@ export default class CameraModal extends Component {
                   }}
                 >
                   <XCircle />
-                  
                 </button>
-                <button
-                  className="btn"
-                  onClick={this._addText.bind(this)}
-                >
-                <Type />
+                <button className="btn" onClick={this._addText.bind(this)}>
+                  <Type />
                 </button>
                 <button
                   className="camera-button camera-send"

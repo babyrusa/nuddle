@@ -63,12 +63,14 @@ export default class HomeFeed extends Component {
         <div class="masonry-wrapper">
           <div class="masonry">
             {this.state.isLoading ? (
+               <div className="loading-wrapper" >
               <ReactLoading
                 type={"spinningBubbles"}
                 color={"salmon"}
                 height={100}
                 width={100}
               />
+              </div>
             ) : this.state.posts.length === 0 ? (
               <i style={{ paddingTop: "10px" }}>No nudes posted</i>
             ) : (
