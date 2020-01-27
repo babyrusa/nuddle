@@ -5,6 +5,7 @@ import groupInvitation from "radiks/lib/models/group-invitation";
 import PersonTop from "../Person/PersonTop";
 import BlockstackUser from "../models/BlockstackUser";
 import { CheckCircle } from "react-feather";
+import TimeStamp from "../Shared/timestamp";
 const defaultProfile = "/images/logo.jpg";
 
 export default class FriendRequestItem extends Component {
@@ -52,7 +53,9 @@ export default class FriendRequestItem extends Component {
     await invitation.activate();
     const _friends = this.state.friends;
     _friends.push(fr.attrs.sender);
-
+    this.setState({
+      friends : _friends
+    })
     const me = await BlockstackUser.findOne({ username: User.currentUser()._id });
     me.update({
       friends  : _friends
@@ -73,6 +76,7 @@ export default class FriendRequestItem extends Component {
         <li className="list-group-item seached-user-li">
             
             <PersonTop username={fr.attrs.sender}/>
+            <div>
             {this.isFriend(fr.attrs.sender) ? 
             <div>
               <button className="btn btn-light add-friend-butt disabled">
@@ -84,11 +88,12 @@ export default class FriendRequestItem extends Component {
                <button className="btn btn-light add-friend-butt" onClick={this.acceptFR.bind(this)}>
                  Accept 
                </button>
-               <button className="btn btn-light add-friend-butt">
-                 Deny 
-               </button>
              </div>
             }
+            <small>
+            {TimeStamp.convertDate(fr.attrs.createdAt).toLowerCase()}
+            </small>
+            </div>
            </li>
     )
   }

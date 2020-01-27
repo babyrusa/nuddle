@@ -54,7 +54,9 @@ export default class FriendSearch extends Component {
 
     const _friends = this.state.friends;
     _friends.push(recipient);
-
+    this.setState({
+      friends : _friends
+    })
     const me = await BlockstackUser.findOne({
       username: User.currentUser()._id
     });
