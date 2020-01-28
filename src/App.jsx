@@ -9,6 +9,7 @@ import Signin from './Nav/Signin.jsx';
 import Nav from './Nav/Nav.jsx';
 import Chat from './Chat/Chat.jsx';
 import CameraModal from './Camera/CameraModal.jsx';
+import SinglePost from './Post/SinglePost.jsx';
 
 const appConfig = new AppConfig(['store_write', 'publish_data']);
 const userSession = new UserSession({ appConfig: appConfig });
@@ -100,6 +101,12 @@ export default class App extends Component {
                   path={`/camera`}
                   exact={true}
                   render={props => <CameraModal {...props} />}
+                />
+                <Route
+                  exact
+                  path={`/p/:postId`}
+                  exact={true}
+                  render={props => <SinglePost {...props} />}
                 />
                 <Redirect to='/' />
               </Switch>

@@ -6,6 +6,7 @@ import NewPost from "../Post/NewPost";
 import { SketchField, Tools } from "react-sketch";
 import CameraTools from "./CameraTools";
 import ReactLoading from "react-loading";
+import $ from "jquery";
 
 Modal.setAppElement("body");
 
@@ -17,13 +18,19 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    padding: "0px",
-    cameraReady: false
-    // width : '100%',
-    // height: '100%'
+    margin: "50px 0",
+    padding : "0",
+    cameraReady: false,
+    minWidth : '500px',
+    height: 'auto',
+   
   }
 };
-
+const videoConstraints = {
+  width: 720,
+  height: 1280,
+  facingMode: "user"
+};
 export default class CameraModal extends Component {
   constructor(props) {
     super(props);
@@ -34,10 +41,15 @@ export default class CameraModal extends Component {
       isTakingPicture: true,
       showSendOption: false,
       penColor: "#000",
-      text: "Click here to edit text"
+      text: "Click here to edit text",
+      width: $(window).width(),
+      height: $(window).height(),
     };
   } //monkey monkey monkey monkey monkey monkey monkey monkey
 
+  componentDidMount(){
+    console.log(this.state.width, this.state.height)
+  }
   takePicture() {
     const _img = this.cam.current.getScreenshot();
 
@@ -126,6 +138,9 @@ export default class CameraModal extends Component {
                 ref={this.cam}
                 mirrored={true}
                 onUserMedia={this.onUserMedia.bind(this)}
+                height={'500px'}
+                width={'auto'}
+                videoConstraints={videoConstraints}
               />
               <button
                 className="camera-button"
@@ -138,8 +153,8 @@ export default class CameraModal extends Component {
             <React.Fragment>
               <div className="photo-taken">
                 <SketchField
-                  width="640px"
-                  height="480px"
+                  width="500px"
+                  height="500px"
                   tool={Tools.Pencil}
                   lineColor={this.state.penColor}
                   ref={this._sketch}
