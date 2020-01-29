@@ -75,7 +75,9 @@ export default class HomeFeed extends Component {
               <i style={{ paddingTop: "10px" }}>No nudes posted</i>
             ) : (
               this.state.posts.map(post => {
-                return <PostCard post={post} />;
+                return post.attrs.address && <PostCard 
+                userSession={this.props.userSession}
+                post={post} />;
               })
             )}
           </div>

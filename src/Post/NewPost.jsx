@@ -7,8 +7,8 @@ import { Send } from 'react-feather';
 import Post from '../models/Post';
 import { withRouter } from 'react-router-dom';
 import Photo from '../Shared/photo';
+const uuidv4 = require('uuid/v4');
 
-const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
 
 class NewPost extends Component {
   constructor(props) {
@@ -18,14 +18,13 @@ class NewPost extends Component {
     }
   }
  
-  post(){
-    const {img} = this.props;
-    // const byteData = Photo.b64tobinary(img.split(",")[1])
-    // const blobId = uuidv4()
+  async post(){
+    const {img, userSession} = this.props;
+    const blobId = uuidv4()
 
-    // await userSession.putFile(`files/${blobId}.json`, JSON.stringify(byteArray),{ encrypt: true })
+    await userSession.putFile(`${blobId}.json`, JSON.stringify(img),{ encrypt: false })
 
-    Post.createPost(this.state.caption, img).finally(()=> {
+    Post.createPost(this.state.caption, blobId).finally(()=> {
       this.props.closeModal()
       this.props.history.push(`/`)
     });

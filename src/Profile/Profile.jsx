@@ -3,7 +3,7 @@ import {
   Person,
 } from 'blockstack';
 
-const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
+const avatarFallbackImage = '/images/logo.jpg';
 
 export default class Profile extends Component {
   constructor(props) {

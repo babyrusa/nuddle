@@ -12,11 +12,21 @@ class PostCard extends Component {
     };
   }
   componentDidMount() {
-    // const {post} = this.props;
-    // const img = Photo.toBlob(post.attrs.byteArray);
-    // this.setState({
-    //   img : img
-    // })
+   this.getImgFromGaia();
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.post !== this.props.post){
+      this.getImgFromGaia();
+    }
+  }
+
+  async getImgFromGaia(){
+    const {post, userSession} = this.props;
+    const img = await userSession.getFile(`${post.attrs.address}.json`,{ decrypt: false })
+    await this.setState({
+      img : JSON.parse(img) || ''
+    })
   }
 
   randomHeight(){
@@ -44,7 +54,7 @@ class PostCard extends Component {
             <div>{post.attrs.caption}</div>
             {/* <PersonTop username={post.attrs.username} /> */}
           </div>
-          <img className='masonry-content' src={post.attrs.base64} alt={post.attrs.username} height={this.randomHeight()} />
+          <img className='masonry-content' src={this.state.img} alt={post.attrs.username} height={this.randomHeight()} />
         </div>
       </div>
     );
