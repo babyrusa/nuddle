@@ -8,7 +8,6 @@ import CameraModal from "../Camera/CameraModal";
 import Message from "../models/Message"
 import Photo from "../Shared/photo";
 
-const uuidv4 = require('uuid/v4');
 
 const TEXT_LIMIT = 1000;
 
@@ -151,6 +150,7 @@ export default class MessageInput extends Component {
           )}
         </div>
         <CameraModal
+          userSession={this.props.userSession}
           modalIsOpen={this.state.cameraModalIsOpen}
           closeModal={this.closeCameraModal.bind(this)}
           sendPhoto={this.sendPhoto.bind(this)}

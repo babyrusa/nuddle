@@ -37,6 +37,7 @@ export default class Home extends Component {
         <div className="row">
           <div className="col">
             <HomeFeed
+              userSession={this.props.userSession}
               cameraModalIsOpen={this.state.cameraModalIsOpen}
               hidden={this.state.hidden}
             />
@@ -72,6 +73,7 @@ export default class Home extends Component {
             <Camera size="24" />
           </button>
           <CameraModal
+            userSession={this.props.userSession}
             modalIsOpen={this.state.cameraModalIsOpen}
             closeModal={this.closeCameraModal.bind(this)}
             //  postPhoto={this.sendPhoto.bind(this)}

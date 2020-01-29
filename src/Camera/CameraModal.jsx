@@ -183,6 +183,7 @@ export default class CameraModal extends Component {
               </div>
               {this.state.showSendOption && (
                 <NewPost
+                  userSession={this.props.userSession}
                   img={this.state.img}
                   sendPhoto={this.sendPhoto.bind(this)}
                   closeModal={this.props.closeModal}
