@@ -32,6 +32,7 @@ export default class Home extends Component {
     });
   }
   render() {
+    const {userSession} = this.props;
     return (
       <div className="home-wrapper container-fluid">
         <div className="row">
@@ -64,14 +65,14 @@ export default class Home extends Component {
               <EyeOff size="24" />
             </button>
           )}
-          <button
+          {userSession.isUserSignedIn() && <button
             className="btn home-camera home-button"
             data-toggle="tooltip"
             title="Open Camera"
             onClick={this.openCameraModal.bind(this)}
           >
             <Camera size="24" />
-          </button>
+          </button>}
           <CameraModal
             userSession={this.props.userSession}
             modalIsOpen={this.state.cameraModalIsOpen}

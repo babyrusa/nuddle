@@ -47,7 +47,19 @@ export default class Nav extends Component {
             <span>davidyapdy.blockstack.id</span>
           </div>
         </div> */}
-        <PersonTop username={this.props.userSession.loadUserData().username} />
+        {userSession.isUserSignedIn() ? 
+        <PersonTop username={userSession.loadUserData().username}/>
+        :
+        <div>
+           <Link
+            className="btn btn-outline-dark"
+            id="signin-button"
+            to="/signin"
+          >
+            Get Naked with Blockstack
+          </Link>
+        </div>
+        }
         <Link to="/" className="navbar-brand d-md-none d-inline">
           <img src="/favicon.ico" />
         </Link>
@@ -76,7 +88,7 @@ export default class Nav extends Component {
               </Link>
             </li>
           </ul>
-          <ul className="nav navbar-nav col-md-7  flex-nowrap">
+          {userSession.isUserSignedIn() && <ul className="nav navbar-nav col-md-7  flex-nowrap">
             <div className="d-flex col justify-content-end">
             <li>
                   {this.state.searchOpened ? (
@@ -96,18 +108,11 @@ export default class Nav extends Component {
                   title="Friend Requests"
                 >
                   <FriendRequests/>
-                  {/* <div className="nav-link" onClick={this.props.handleSignOut}>
-                    <Edit />
-                  </div> */}
                 </li>
               
               </div>
 
             <div className="d-flex col-md-6 justify-content-between align-items-center">
-              {/* <div className="d-flex justify-content-center align-items-center">
-                <ArrowLeft />
-                <span className="ml-2">Messages</span>{" "}
-              </div> */}
               <div className="d-flex">
               <li className="nav-item">
                 <Link
@@ -137,6 +142,7 @@ export default class Nav extends Component {
                </div>
             </div>
           </ul>
+        }
         </div>
       </nav>
 

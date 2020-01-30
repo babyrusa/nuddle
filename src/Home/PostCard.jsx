@@ -12,12 +12,12 @@ class PostCard extends Component {
     };
   }
   componentDidMount() {
-   this.getImgFromGaia();
+  //  this.getImgFromGaia();
   }
 
   componentDidUpdate(prevProps){
     if(prevProps.post !== this.props.post){
-      this.getImgFromGaia();
+      // this.getImgFromGaia();
     }
   }
 
@@ -54,7 +54,7 @@ class PostCard extends Component {
             <div>{post.attrs.caption}</div>
             {/* <PersonTop username={post.attrs.username} /> */}
           </div>
-          <img className='masonry-content' src={this.state.img} alt={post.attrs.username} height={this.randomHeight()} />
+          <img className='masonry-content' src={post.attrs.base64} alt={post.attrs.username} height={this.randomHeight()} />
         </div>
       </div>
     );

@@ -25,7 +25,7 @@ export default class SinglePost extends Component {
   }
   async getPost(){
     const id = this.props.match.params.postId;
-    const post = await Post.findOne({_id : id});
+    const post = await Post.findOne({_id : id},{decrypt : false});
     if(post) {
       this.setState({
         post : post

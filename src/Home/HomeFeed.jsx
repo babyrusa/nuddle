@@ -39,7 +39,7 @@ export default class HomeFeed extends Component {
   }
 
   async fetchPosts() {
-    const posts = await Post.fetchList({ sort: "-createdAt" });
+    const posts = await Post.fetchList({ sort: "-createdAt" }, {decrypt : false});
 
     this.setState({
       posts: posts
@@ -75,7 +75,7 @@ export default class HomeFeed extends Component {
               <i style={{ paddingTop: "10px" }}>No nudes posted</i>
             ) : (
               this.state.posts.map(post => {
-                return post.attrs.address && <PostCard 
+                return<PostCard 
                 userSession={this.props.userSession}
                 post={post} />;
               })
