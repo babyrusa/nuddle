@@ -12,12 +12,12 @@ class PostCard extends Component {
     };
   }
   componentDidMount() {
-   this.getImgFromGaia();
+  //  this.getImgFromGaia();
   }
 
   componentDidUpdate(prevProps){
     if(prevProps.post !== this.props.post){
-      this.getImgFromGaia();
+      // this.getImgFromGaia();
     }
   }
 
