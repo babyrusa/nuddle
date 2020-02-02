@@ -1,8 +1,38 @@
 [build]
-  publish = "public"
+  publish = "build"
+
+[[redirects]]
+  from = "/*"
+  status = 200
+  to = "/index.html"
 
 [[headers]]
-  for = "/*"
+  for = "/"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS, DELETE, PUT"
+    "Can't-Be-Evil" = "true"
 
-[headers.values]
-"Can't-Be-Evil" = "true"
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS, DELETE, PUT"
+    "Can't-Be-Evil" = "true"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS, DELETE, PUT"
+    "Can't-Be-Evil" = "true"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS, DELETE, PUT"
