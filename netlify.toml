@@ -1,9 +1,8 @@
 [build]
-
-    publish = "public"
+  publish = "public"
 
 [[headers]]
-    for = "/*"
+  for = "/*"
 
-    [headers.values]
-        "Can't-Be-Evil" = "true"
+[headers.values]
+"Can't-Be-Evil" = "true"

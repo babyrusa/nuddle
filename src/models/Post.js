@@ -37,12 +37,12 @@ export default class Post extends Model {
   };
   static defaults = {
   }
-  static async createPost(caption, base64){
+  static async createPost(caption, blobId){
     const post = new Post({
       username : User.currentUser()._id,
       caption : caption,
-      base64 : base64,
-      // address : blobId
+      // base64 : base64,
+      address : blobId
     })
     await post.save()
     return post;

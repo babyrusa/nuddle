@@ -20,11 +20,11 @@ class NewPost extends Component {
  
   async post(){
     const {img, userSession} = this.props;
-    // const blobId = uuidv4()
+    const blobId = uuidv4()
 
-    // await userSession.putFile(`${blobId}.json`, JSON.stringify(img),{ encrypt: false })
+    await userSession.putFile(`${blobId}.json`, JSON.stringify(img),{ encrypt: false })
 
-    Post.createPost(this.state.caption, img).finally(()=> {
+    Post.createPost(this.state.caption, blobId).finally(()=> {
       this.props.closeModal()
       this.props.history.push(`/`)
     });
