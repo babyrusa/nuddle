@@ -55,7 +55,7 @@ class PostCard extends Component {
             <div>{post.attrs.caption}</div>
             {/* <PersonTop username={post.attrs.username} /> */}
           </div>
-          {/* <img className='masonry-content' src={userSession.getFile(`${post.attrs.address}.json`,{ decrypt: false })} alt={post.attrs.username} height={this.randomHeight()} /> */}
+          <img className='masonry-content' src={this.state.img} alt={post.attrs.username} height={this.randomHeight()} />
         </div>
       </div>
     );
