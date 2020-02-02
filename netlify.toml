@@ -1,0 +1,9 @@
+[build]
+
+    publish = "public"
+
+[[headers]]
+    for = "/*"
+
+    [headers.values]
+        "Can't-Be-Evil" = "true"

@@ -36,17 +36,6 @@ export default class Nav extends Component {
     const { person } = this.state;
     return (
       <nav className="navbar p-3 navbar-expand-md bg-light ">
-        {/* <div className='d-flex justify-content-center '>
-          <img
-            src='/favicon.ico'
-            alt='current-user'
-            className='user-img mt-1'
-          />
-          <div className='d-flex flex-column ml-2 justify-content-center'>
-            <span className='font-weight-bold text-capitalize'>David Yap</span>
-            <span>davidyapdy.blockstack.id</span>
-          </div>
-        </div> */}
         {userSession.isUserSignedIn() ? 
         <PersonTop username={userSession.loadUserData().username}/>
         :

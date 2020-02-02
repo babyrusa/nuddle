@@ -12,17 +12,18 @@ class PostCard extends Component {
     };
   }
   componentDidMount() {
-  //  this.getImgFromGaia();
+   this.getImgFromGaia();
   }
 
   componentDidUpdate(prevProps){
     if(prevProps.post !== this.props.post){
-      // this.getImgFromGaia();
+      this.getImgFromGaia();
     }
   }
 
   async getImgFromGaia(){
     const {post, userSession} = this.props;
+    console.log(post.attrs.address)
     const img = await userSession.getFile(`${post.attrs.address}.json`,{ decrypt: false })
     await this.setState({
       img : JSON.parse(img) || ''
@@ -46,7 +47,7 @@ class PostCard extends Component {
     this.props.history.push(`/p/${post.attrs._id}`);
   }
   render() {
-    const { post } = this.props;
+    const { post, userSession } = this.props;
     return (
       <div className='masonry-item' onClick={this.goToImg.bind(this,post)}>
         <div style={{ position: 'relative' }}>
@@ -54,7 +55,7 @@ class PostCard extends Component {
             <div>{post.attrs.caption}</div>
             {/* <PersonTop username={post.attrs.username} /> */}
           </div>
-          <img className='masonry-content' src={post.attrs.base64} alt={post.attrs.username} height={this.randomHeight()} />
+          {/* <img className='masonry-content' src={userSession.getFile(`${post.attrs.address}.json`,{ decrypt: false })} alt={post.attrs.username} height={this.randomHeight()} /> */}
         </div>
       </div>
     );
