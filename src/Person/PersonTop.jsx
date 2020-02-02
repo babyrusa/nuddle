@@ -41,7 +41,6 @@ export default class PersonTop extends Component {
   async getProfilePic(){
     const {person} = this.state;
     const {userSession} = this.props;
-    console.log(person.avatarUrl())
     // const profileUrl =await getFile('1PcWxogPMAg99ay4iuKE4aDdhpKwfXTvJs//avatar-0')
     // const url = Photo.toBlob(profileUrl);
     // this.setState({

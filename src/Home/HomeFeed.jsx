@@ -88,7 +88,8 @@ export default class HomeFeed extends Component {
               <div class="masonry-item">
                 <img
                   src="/images/dummy/dummy1.JPG"
-                  alt="Dummy "
+                  alt="Dummy"
+                  width="auto"
                   height="400"
                   class="masonry-content"
                 />
@@ -98,6 +99,7 @@ export default class HomeFeed extends Component {
                   src="/images/dummy/dummy2.JPG"
                   alt="Dummy"
                   height="300"
+                  width="auto"
                   class="masonry-content"
                 />
               </div>
@@ -105,6 +107,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy3.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="400"
                   class="masonry-content"
                 />
@@ -113,6 +116,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy4.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="290"
                   class="masonry-content"
                 />
@@ -121,6 +125,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy5.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="240"
                   class="masonry-content"
                 />
@@ -129,6 +134,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy6.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="440"
                   class="masonry-content"
                 />
@@ -137,6 +143,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy7.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="500"
                   class="masonry-content"
                 />
@@ -145,6 +152,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy8.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="600"
                   class="masonry-content"
                 />
@@ -153,6 +161,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy9.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="700"
                   class="masonry-content"
                 />
@@ -161,6 +170,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy10.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="450"
                   class="masonry-content"
                 />
@@ -169,6 +179,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy11.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="550"
                   class="masonry-content"
                 />
@@ -177,7 +188,8 @@ export default class HomeFeed extends Component {
                 <img
                  src="/images/dummy/dummy12.JPG"
                  alt="Dummy "
-                 height="480"
+                  width="auto"
+                  height="480"
                  class="masonry-content"
                 />
               </div>
@@ -185,6 +197,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy13.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -193,6 +206,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy14.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -201,6 +215,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy15.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -209,6 +224,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy16.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -217,7 +233,8 @@ export default class HomeFeed extends Component {
                 <img
                  src="/images/dummy/dummy17.JPG"
                  alt="Dummy "
-                 height="480"
+                  width="auto"
+                  height="480"
                  class="masonry-content"
                 />
               </div>
@@ -225,6 +242,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy18.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -233,6 +251,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy19.JPG"
                   alt="Dummy "
+                  width="auto"
                   height="280"
                   class="masonry-content"
                 />
@@ -241,6 +260,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy20.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -249,6 +269,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy21.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="480"
                   class="masonry-content"
                 />
@@ -257,7 +278,8 @@ export default class HomeFeed extends Component {
                 <img
                  src="/images/dummy/dummy22.JPG"
                  alt="Dummy "
-                 height="420"
+                  width="auto"
+                  height="420"
                  class="masonry-content"
                 />
               </div>
@@ -265,6 +287,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy23.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="250"
                   class="masonry-content"
                 />
@@ -273,6 +296,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy24.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="400"
                   class="masonry-content"
                 />
@@ -281,6 +305,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy25.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="550"
                   class="masonry-content"
                 />
@@ -289,6 +314,7 @@ export default class HomeFeed extends Component {
                 <img
                   src="/images/dummy/dummy26.JPG"
                   alt="Dummy"
+                  width="auto"
                   height="300"
                   class="masonry-content"
                 />
