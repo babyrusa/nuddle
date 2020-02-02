@@ -87,260 +87,209 @@ export default class HomeFeed extends Component {
             <div class="masonry">
               <div class="masonry-item">
                 <img
-                  src="https://unsplash.it/529/529/"
+                  src="/images/dummy/dummy1.JPG"
                   alt="Dummy "
+                  height="400"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://unsplash.it/534/529/"
-                  alt="Dummy "
+                  src="/images/dummy/dummy2.JPG"
+                  alt="Dummy"
+                  height="300"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://unsplash.it/525/529/"
-                  alt="Dummy "
+                  src="/images/dummy/dummy3.JPG"
+                  alt="Dummy"
+                  height="400"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/450?image=200"
+                  src="/images/dummy/dummy4.JPG"
                   alt="Dummy "
+                  height="290"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/280?image=300"
+                  src="/images/dummy/dummy5.JPG"
                   alt="Dummy "
+                  height="240"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/540?image=400"
+                  src="/images/dummy/dummy6.JPG"
                   alt="Dummy "
+                  height="440"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/380?image=500"
+                  src="/images/dummy/dummy7.JPG"
                   alt="Dummy "
+                  height="500"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/300?image=600"
+                  src="/images/dummy/dummy8.JPG"
                   alt="Dummy "
+                  height="600"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/400?image=700"
+                  src="/images/dummy/dummy9.JPG"
                   alt="Dummy "
+                  height="700"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/300?image=800"
+                  src="/images/dummy/dummy10.JPG"
                   alt="Dummy "
+                  height="450"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/280?image=900"
+                  src="/images/dummy/dummy11.JPG"
                   alt="Dummy "
+                  height="550"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/480?image=925"
+                 src="/images/dummy/dummy12.JPG"
+                 alt="Dummy "
+                 height="480"
+                 class="masonry-content"
+                />
+              </div>
+              <div class="masonry-item">
+                <img
+                  src="/images/dummy/dummy13.JPG"
                   alt="Dummy "
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/550?image=950"
+                  src="/images/dummy/dummy14.JPG"
                   alt="Dummy "
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/600?image=1000"
+                  src="/images/dummy/dummy15.JPG"
                   alt="Dummy "
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/325?image=25"
+                  src="/images/dummy/dummy16.JPG"
                   alt="Dummy "
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/450?image=50"
+                 src="/images/dummy/dummy17.JPG"
+                 alt="Dummy "
+                 height="480"
+                 class="masonry-content"
+                />
+              </div>
+              <div class="masonry-item">
+                <img
+                  src="/images/dummy/dummy18.JPG"
                   alt="Dummy "
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/280?image=75"
+                  src="/images/dummy/dummy19.JPG"
                   alt="Dummy "
+                  height="280"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/540?image=100"
-                  alt="Dummy "
+                  src="/images/dummy/dummy20.JPG"
+                  alt="Dummy"
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/380?image=125"
-                  alt="Dummy "
+                  src="/images/dummy/dummy21.JPG"
+                  alt="Dummy"
+                  height="480"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/300?image=161"
-                  alt="Dummy "
+                 src="/images/dummy/dummy22.JPG"
+                 alt="Dummy "
+                 height="420"
+                 class="masonry-content"
+                />
+              </div>
+              <div class="masonry-item">
+                <img
+                  src="/images/dummy/dummy23.JPG"
+                  alt="Dummy"
+                  height="250"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/400?image=175"
-                  alt="Dummy "
+                  src="/images/dummy/dummy24.JPG"
+                  alt="Dummy"
+                  height="400"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/300?image=200"
-                  alt="Dummy "
+                  src="/images/dummy/dummy25.JPG"
+                  alt="Dummy"
+                  height="550"
                   class="masonry-content"
                 />
               </div>
               <div class="masonry-item">
                 <img
-                  src="https://picsum.photos/450/280?image=225"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/480?image=250"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/550?image=275"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/600?image=300"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/325?image=13"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/450?image=26"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/280?image=39"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/540?image=52"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://picsum.photos/450/380?image=65"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://unsplash.it/524/524/"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://unsplash.it/524/525/"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://unsplash.it/524/529/"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://unsplash.it/524/524/"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://unsplash.it/524/525/"
-                  alt="Dummy "
-                  class="masonry-content"
-                />
-              </div>
-              <div class="masonry-item">
-                <img
-                  src="https://unsplash.it/524/529/"
-                  alt="Dummy "
+                  src="/images/dummy/dummy26.JPG"
+                  alt="Dummy"
+                  height="300"
                   class="masonry-content"
                 />
               </div>
