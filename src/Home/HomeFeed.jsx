@@ -144,7 +144,7 @@ export default class HomeFeed extends Component {
                   src="/images/dummy/dummy7.JPG"
                   alt="Dummy "
                   width="auto"
-                  height="500"
+                  height="430"
                   class="masonry-content"
                 />
               </div>
@@ -153,7 +153,7 @@ export default class HomeFeed extends Component {
                   src="/images/dummy/dummy8.JPG"
                   alt="Dummy "
                   width="auto"
-                  height="600"
+                  height="500"
                   class="masonry-content"
                 />
               </div>
@@ -162,7 +162,7 @@ export default class HomeFeed extends Component {
                   src="/images/dummy/dummy9.JPG"
                   alt="Dummy "
                   width="auto"
-                  height="700"
+                  height="290"
                   class="masonry-content"
                 />
               </div>
