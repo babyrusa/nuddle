@@ -71,7 +71,9 @@ export default class App extends Component {
                   exact
                   path={`/p/:postId`}
                   exact={true}
-                  render={props => <SinglePost {...props} />}
+                  render={props => <SinglePost {...props}
+                  userSession={userSession}
+                  />}
                 />
                 <Route
                   exact
@@ -147,7 +149,9 @@ export default class App extends Component {
                   exact
                   path={`/p/:postId`}
                   exact={true}
-                  render={props => <SinglePost {...props} />}
+                  render={props => <SinglePost {...props}
+                  userSession={userSession}
+                  />}
                 />
                 <Redirect to="/" />
               </Switch>
