@@ -3,11 +3,11 @@
   "description": "Secure Nudes Platform",
   "icons": [
     {
-    "src": "favicon.ico",
-    "sizes": "192x192",
-    "type": "image/png"
+    "src": "images/logo.jpg",
+    "sizes": "900x900",
+    "type": "image/jpg"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone"
 }
