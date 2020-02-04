@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import PostCard from "./PostCard";
 import Post from "../models/Post";
 import ReactLoading from "react-loading";
+import Feed from "./PostWrapper";
 
 export default class HomeFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
       posts: [],
-      isLoading: false
+      isLoading: false,
+      feed : 'public'
     };
   }
   componentDidMount() {
@@ -45,19 +46,27 @@ export default class HomeFeed extends Component {
       posts: posts
     });
   }
+
+  changeFeed(feed){
+    this.setState({
+      feed : feed
+    })
+  }
   render() {
     return (
       <div className="home-feed-wrapper col-md-8 container">
         <div className="d-flex justify-content-center align-items-center">
-          <a className="mr-2 link link-active" href="/">
+          <a className="mr-2 link link-active feed-tab" data-toggle="tooltip" title="Everyone's public posts"
+          onClick={this.changeFeed.bind(this, 'public')}>
             Public
           </a>
-          <a className="mr-2 link-light link" href="/">
-            Subscribed
+          <a className="mr-2 link-light link feed-tab"  data-toggle="tooltip" title="Your friends' private posts"
+          onClick={this.changeFeed.bind(this, 'private')}>
+            Private
           </a>
-          <a href="/" className="link link-light">
+          {/* <a href="/" className="link link-light">
             Collection
-          </a>
+          </a> */}
         </div>
         {!this.props.hidden ? 
         <div class="masonry-wrapper">
@@ -71,15 +80,9 @@ export default class HomeFeed extends Component {
                 width={100}
               />
               </div>
-            ) : this.state.posts.length === 0 ? (
-              <i style={{ paddingTop: "10px" }}>No nudes posted</i>
-            ) : (
-              this.state.posts.map(post => {
-                return <PostCard 
-                userSession={this.props.userSession}
-                post={post} />;
-              })
-            )}
+            ) : (this.state.feed === 'public' ? <Feed posts = {this.state.posts}/>
+            :
+            "Private feed is in the work")}
           </div>
         </div>
         :

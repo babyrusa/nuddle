@@ -396,7 +396,9 @@ textarea[autoresize] {
   max-width: 95%;
   column-gap: 1em;
 }
-
+.feed-tab{
+  cursor: pointer;
+}
 /* The Masonry Brick */
 .item {
   background: #fff;
