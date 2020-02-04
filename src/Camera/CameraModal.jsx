@@ -48,7 +48,6 @@ export default class CameraModal extends Component {
   } //monkey monkey monkey monkey monkey monkey monkey monkey
 
   componentDidMount(){
-    console.log(this.state.width, this.state.height)
   }
   takePicture() {
     const _img = this.cam.current.getScreenshot();

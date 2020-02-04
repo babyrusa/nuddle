@@ -34,7 +34,6 @@ export default class Photo {
   
   }
   static toBlob(byteData){
-    console.log(byteData)
     const blob = new Blob([byteData], {type: 'image/jpg'});
     return URL.createObjectURL(blob);
   }
