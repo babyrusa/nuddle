@@ -24,7 +24,7 @@ class NewPost extends Component {
 
     await userSession.putFile(`${blobId}.json`, JSON.stringify(img),{ encrypt: false })
 
-    Post.createPost(this.state.caption, blobId).finally(()=> {
+    await Post.createPost(this.state.caption, blobId).finally(()=> {
       this.props.closeModal()
       this.props.history.push(`/`)
     });
