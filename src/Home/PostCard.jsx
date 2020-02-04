@@ -61,7 +61,7 @@ class PostCard extends Component {
     this.props.history.push(`/p/${post.attrs._id}`);
   }
   render() {
-    const { post, userSession } = this.props;
+    const { post } = this.props;
     return (
       <div className='masonry-item' onClick={this.goToImg.bind(this,post)}>
         <div style={{ position: 'relative' }}>
