@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Photo from '../Shared/photo';
 import PersonTop from '../Person/PersonTop';
 import { Link, withRouter } from 'react-router-dom';
+import { getFile } from 'blockstack';
 const defaultProfile = '/images/logo.jpg';
 
 class PostCard extends Component {
@@ -36,8 +37,8 @@ class PostCard extends Component {
   }
 
   async getImgFromGaia(){
-    const {post, userSession} = this.props;
-    const img = await userSession.getFile(`${post.attrs.address}.json`,{ decrypt: false })
+    const {post} = this.props;
+    const img = await getFile(`${post.attrs.address}.json`,{ decrypt: false })
     await this.setState({
       img : JSON.parse(img) || ''
     })

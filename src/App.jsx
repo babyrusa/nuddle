@@ -48,49 +48,51 @@ export default class App extends Component {
     return (
       <div className="site-wrapper">
         {!userSession.isUserSignedIn() ? (
-          <React.Fragment>
-            <Nav
-              userSession={userSession}
-              handleSignOut={this.handleSignOut.bind(this)}
-            />
-            <div className="inner-wrapper">
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  exact={true}
-                  render={props => (
-                    <Home
-                      {...props}
-                      userSession={userSession}
-                      handleSignIn={this.handleSignIn}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path={`/p/:postId`}
-                  exact={true}
-                  render={props => <SinglePost {...props}
-                  userSession={userSession}
-                  />}
-                />
-                <Route
-                  exact
-                  path={`/signin`}
-                  exact={true}
-                  render={props => (
-                    <Signin
-                      {...props}
-                      userSession={userSession}
-                      handleSignIn={this.handleSignIn}
-                    />
-                  )}
-                />
-                <Redirect to="/" />
-              </Switch>
-            </div>
-          </React.Fragment>
+          <Signin userSession={userSession}
+                  handleSignIn={this.handleSignIn}  />
+          // <React.Fragment>
+          //   <Nav
+          //     userSession={userSession}
+          //     handleSignOut={this.handleSignOut.bind(this)}
+          //   />
+          //   <div className="inner-wrapper">
+          //     <Switch>
+          //       <Route
+          //         exact
+          //         path="/"
+          //         exact={true}
+          //         render={props => (
+          //           <Home
+          //             {...props}
+          //             userSession={userSession}
+          //             handleSignIn={this.handleSignIn}
+          //           />
+          //         )}
+          //       />
+          //       <Route
+          //         exact
+          //         path={`/p/:postId`}
+          //         exact={true}
+          //         render={props => <SinglePost {...props}
+          //         userSession={userSession}
+          //         />}
+          //       />
+          //       <Route
+          //         exact
+          //         path={`/signin`}
+          //         exact={true}
+          //         render={props => (
+          //           <Signin
+          //             {...props}
+          //             userSession={userSession}
+          //             handleSignIn={this.handleSignIn}
+          //           />
+          //         )}
+          //       />
+          //       <Redirect to="/" />
+          //     </Switch>
+          //   </div>
+          // </React.Fragment>
         ) : (
           <React.Fragment>
             <Nav
