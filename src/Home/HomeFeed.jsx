@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Post from "../models/Post";
 import ReactLoading from "react-loading";
-import Feed from "./PostWrapper";
+import Feed from "./Feed";
 
 export default class HomeFeed extends Component {
   constructor(props) {

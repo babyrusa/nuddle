@@ -18,15 +18,21 @@ export default class Signin extends Component {
 
         <img src="/images/demo.gif" width="700px"/>
         </div>
-        <div>
-
+        <div style={{display:"flex", flexDirection : "column"}}>
+<div>
           <button
             className="btn btn-outline-dark btn-lg"
             id="signin-button"
             onClick={ handleSignIn.bind(this) }
           >
-            Get Naked with Blockstack
+            Get Naked with Blockstack*
           </button>
+          </div>
+          <div>
+          <small>
+            *By signing up, you confirm you are <b>18 years old</b> and above
+          </small>
+          </div>
           </div>
       </div>
     );
