@@ -1,0 +1,167 @@
+body {background-color: #fee7e1 !important; font-family: 'roboto' !important; }
+.panel-landing {
+    font-family: roboto, Helvetica, sans-serif;
+    background: url('../Images/Landing/23-2.svg') no-repeat 50% -60%;
+    background-size: 30%;
+    background-color: #fee7e1;
+    display: block !important;
+    height: auto !important;
+}
+p {font-family: 'roboto' !important;}
+span {font-family: 'roboto' !important;}
+button {font-family: 'roboto' !important;}
+@font-face {
+    font-family: 'roboto';
+    src: url('../Fonts/Roboto-Regular-webfont.eot');
+    src: url('../Fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../Fonts/Roboto-Regular-webfont.woff') format('woff'),
+    url('../Fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+    url('../Fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EBGaramond08';
+    src: url('../Fonts/EBGaramond08-Regular.eot');
+    src: url('../Fonts/EBGaramond08-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../Fonts/EBGaramond08-Regular.svg#EBGaramond08-Regular') format('svg'),
+    url('../Fonts/EBGaramond08-Regular.ttf') format('truetype'),
+    url('../Fonts/EBGaramond08-Regular.woff') format('woff'),
+    url('../Fonts/EBGaramond08-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menubar {height: 50px; display: block; width: 100%; text-align: right; padding-top: 15px;}
+.menubar ul li {display:inline-block; margin: 0px; padding: 0px;}
+.menubar ul li a {
+    display:inline-block;
+    padding: 5px 15px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 40px;
+    color: #000;
+    font-family: 'roboto' !important;
+}
+
+
+
+.col-01 {padding-top: 14%;}
+.col-01 h2 {
+    font-family: 'EBGaramond08' !important;
+    font-size: 50px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.col-01 p {
+    font-size: 18px;
+}
+
+.col-2 {width: 50%; display: block;}
+
+.col-02 {
+    position: relative;
+}
+
+.btn-black {
+    color: #fff !important;
+    background-color: #000 !important;
+    border-color: #000 !important;
+    border-radius: 0px !important;
+    padding: 10px 30px !important;
+}
+
+.btn-black:hover {color: #fff;}
+.img-00 {
+    position: relative;
+}
+.img-00:after {
+    position: absolute;
+    top: -300px;
+    left: 440px;
+    content: '';
+    background: url(/static/media/23-2.1313c3a3.svg) no-repeat;
+    width: 370px;
+    height: 501px;
+    background-size: 100%;
+}
+
+
+.img-01 {position: relative;}
+.img-01:after {
+    position:absolute;
+    bottom: -240px;
+    right: -119px;
+    content:'';
+    background:url('../Images/Landing/23-5.svg') no-repeat;
+    width: 320px;
+    height:501px;
+    background-size: 100%;
+}
+
+.img-02 {position: relative;}
+.img-02:after {
+    position:absolute;
+    top: -250px;
+    left: -250px;
+    content:'';
+    background:url('../Images/Landing/23-2.svg') no-repeat;
+    width: 320px;
+    height:501px;
+    background-size: 100%;
+}
+
+.img-03 {position: relative;}
+.img-03:after {
+    position:absolute;
+    top: -400px;
+    left: -250px;
+    content:'';
+    background:url('../Images/Landing/23-5.svg') no-repeat;
+    width: 320px;
+    height:501px;
+    background-size: 100%;
+}
+
+.img-04 {position: relative;}
+.img-04:after {
+    position:absolute;
+    top: -350px;
+    left: 240px;
+    content:'';
+    background:url('../Images/Landing/23-2.svg') no-repeat;
+    width: 320px;
+    height:501px;
+    background-size: 100%;
+}
+
+.img-05 {position: relative;}
+.img-05:after {
+    position: absolute;
+    top: 140px;
+    left: -300px;
+    content: '';
+    background: url('../Images/Landing/23-2.svg') no-repeat;
+    width: 320px;
+    height: 501px;
+    background-size: 100%;
+}
+
+.img-06 {position: relative;}
+.img-06:after {
+    position:absolute;
+    top: 0px;
+    left: 335px;
+    content:'';
+    background:url('../Images/Landing/23-5.svg') no-repeat;
+    width: 320px;
+    height:501px;
+    background-size: 100%;
+}
