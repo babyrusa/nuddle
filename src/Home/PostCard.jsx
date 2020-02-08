@@ -52,12 +52,12 @@ class PostCard extends Component {
     const heights = [450, 280,
       550,
       480,
-      200,
+      480,
       540,
-      380,
-      300,
+      420,
+      350,
       400,
-      350
+      380
       ]
     return heights[Math.floor(Math.random() * heights.length)]
   }

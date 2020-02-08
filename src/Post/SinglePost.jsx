@@ -63,9 +63,9 @@ export default class SinglePost extends Component {
     const { post, img } = this.state;
     return (
       <div className="single-post-wrapper">
-        <div>
+        <div className="single-post">
           <button className="btn btn-outline-light delete-button">
-          <XCircle />
+          <XCircle color="#f8f9fa" />
           </button>
           <img src={img} />
           <p>{post.attrs.caption}</p>
