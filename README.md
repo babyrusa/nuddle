@@ -51,8 +51,10 @@ We also have plan to make a react native mobile version of the app that prevents
 4. Blockstack Auth
 
 
-###
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f6d2714a-f892-4c1a-a3d9-b750c50f0271/deploy-status)](https://app.netlify.com/sites/sharp-brattain-9d89b7/deploys)
+
+
+
+
 
 
 
