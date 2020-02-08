@@ -32,7 +32,7 @@ export default class Signin extends Component {
                                 and share it with your followers or publicly.</p>
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <button type="button" className="btn btn-black">Get Started</button>
+                                    <button type="button" className="btn btn-black" onClick={handleSignIn.bind(this)}>Get Started</button>
                                 </div>
                                 <div className="col-sm-8">
                                     <span style={{fontSize: '14px'}}>By signing up, you confirm you <br />are <span
@@ -60,7 +60,7 @@ export default class Signin extends Component {
                                 and share it with your followers or publicly.</p>
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <button type="button" className="btn btn-black">Get Started</button>
+                                    <button type="button" className="btn btn-black" onClick={handleSignIn.bind(this)}>Get Started</button>
                                 </div>
                                 <div className="col-sm-8">
                                     <span style={{fontSize: '14px'}}>By signing up, you confirm you <br />are <span
@@ -79,7 +79,7 @@ export default class Signin extends Component {
                                 and share it with your followers or publicly.</p>
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <button type="button" className="btn btn-black">Get Started</button>
+                                    <button type="button" className="btn btn-black" onClick={handleSignIn.bind(this)}>Get Started</button>
                                 </div>
                                 <div className="col-sm-8">
                                     <span style={{fontSize: '14px'}}>By signing up, you confirm you <br />are <span
@@ -108,7 +108,9 @@ export default class Signin extends Component {
                                 and share it with your followers or publicly.</p>
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <button type="button" className="btn btn-black">Get Started</button>
+                                    <button type="button" className="btn btn-black"
+                                    onClick={handleSignIn.bind(this)}
+                                    >Get Started</button>
                                 </div>
                                 <div className="col-sm-8">
                                     <span style={{fontSize: '14px'}}>By signing up, you confirm you <br />are <span
