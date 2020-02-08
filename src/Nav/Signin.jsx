@@ -54,7 +54,7 @@ export default class Signin extends Component {
                         </div>
                         <div className="col-sm-1"></div>
                         <div className="col-sm-6 col-01">
-                            <h2>Chat Privately</h2>
+                            <h2>Chat</h2>
                             <p>Securely send your photo to only people you know by creating an encrypted chat room that allows 
                                 you to exchange photo and conversations with self-destructing messages.</p>
                             <div className="row">
@@ -101,7 +101,7 @@ export default class Signin extends Component {
                         </div>
                         <div className="col-sm-1"></div>
                         <div className="col-sm-6 col-01">
-                            <h2>Share Securely</h2>
+                            <h2>Share</h2>
                             <p>No longer need to upload your photo on imgur or any other hosting site that could leak 
                                 or expose your most private photo to hacking. Upload your photo on Nuddle decentralized 
                                 storage and paste the link anywhere you want.</p>
