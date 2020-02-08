@@ -10,7 +10,8 @@ export default class SinglePost extends Component {
       post : {
         attrs : {
           username : 'Nudist',
-          base64 : ''
+          base64 : null,
+          address : null
         }
       },
       img : ''
@@ -46,7 +47,11 @@ export default class SinglePost extends Component {
   async getImgFromGaia(){
     const {post} = this.state;
     const {userSession} = this.props;
-    const img = await userSession.getFile(`${post.attrs.address}.json`,{ decrypt: false })
+    const img = await userSession.getFile(`${post.attrs.address}.json`,
+    {
+      username: post.attrs.username,
+      decrypt: false
+    })
     await this.setState({
       img : JSON.parse(img) || ''
     })
