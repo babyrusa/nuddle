@@ -36,9 +36,12 @@ class PostCard extends Component {
       }    }
   }
 
-  async getImgFromGaia(){
-    const {post} = this.props;
-    const img = await getFile(`${post.attrs.address}.json`,{ decrypt: false })
+  async getImgFromGaia() {
+    const { post } = this.props;
+    const img = await getFile(`${post.attrs.address}.json`, {
+      username: post.attrs.username,
+      decrypt: false
+    });
     await this.setState({
       img : JSON.parse(img) || ''
     })
