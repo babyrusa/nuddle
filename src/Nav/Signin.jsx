@@ -55,9 +55,8 @@ export default class Signin extends Component {
                         <div className="col-sm-1"></div>
                         <div className="col-sm-6 col-01">
                             <h2>Chat</h2>
-                            <p>Nuddle is a decentralized photo sharing app for nudist with military grade encryption
-                                that lets you share your nudes to only whomever you allow, no one else. Simply upload
-                                and share it with your followers or publicly.</p>
+                            <p>Securely send your photo to only people you know by creating an encrypted chat room that allows 
+                                you to exchange photo and conversations with self-destructing messages.</p>
                             <div className="row">
                                 <div className="col-sm-4">
                                     <button type="button" className="btn btn-black" onClick={handleSignIn.bind(this)}>Get Started</button>
@@ -73,10 +72,10 @@ export default class Signin extends Component {
                     <div className="row" style={{paddingTop: '180px'}}>
                         <div className="col-sm-6 col-01">
                             <div className="img-03"></div>
-                            <h2>Follow</h2>
-                            <p>Nuddle is a decentralized photo sharing app for nudist with military grade encryption
-                                that lets you share your nudes to only whomever you allow, no one else. Simply upload
-                                and share it with your followers or publicly.</p>
+                            <h2>Follow (Coming Soon)</h2>
+                            <p>Nuddle allows you to follow nudist or content creator so that you'll get up to date
+                                notification whenever yout favorite conntent creator uploads an image on Nuddle.
+                            </p>
                             <div className="row">
                                 <div className="col-sm-4">
                                     <button type="button" className="btn btn-black" onClick={handleSignIn.bind(this)}>Get Started</button>
@@ -103,9 +102,9 @@ export default class Signin extends Component {
                         <div className="col-sm-1"></div>
                         <div className="col-sm-6 col-01">
                             <h2>Share</h2>
-                            <p>Nuddle is a decentralized photo sharing app for nudist with military grade encryption
-                                that lets you share your nudes to only whomever you allow, no one else. Simply upload
-                                and share it with your followers or publicly.</p>
+                            <p>No longer need to upload your photo on imgur or any other hosting site that could leak 
+                                or expose your most private photo to hacking. Upload your photo on Nuddle decentralized 
+                                storage and paste the link anywhere you want.</p>
                             <div className="row">
                                 <div className="col-sm-4">
                                     <button type="button" className="btn btn-black"
