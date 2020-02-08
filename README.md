@@ -1,3 +1,6 @@
+###
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f6d2714a-f892-4c1a-a3d9-b750c50f0271/deploy-status)](https://app.netlify.com/sites/sharp-brattain-9d89b7/deploys)
+
 ### About Nuddle
 
 Nuddle is an encrypted photo messaging app for nudist to securely share their nudes publicly or privately without the fear of storing your most private photo on a centralized server, waiting to be leak.
