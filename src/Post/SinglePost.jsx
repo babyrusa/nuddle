@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Post from "../models/Post";
 import PersonTop from "../Person/PersonTop";
 import { XCircle } from "react-feather";
+import { User } from "radiks/lib";
 
 export default class SinglePost extends Component {
   constructor(props) {
@@ -59,14 +60,22 @@ export default class SinglePost extends Component {
       img: JSON.parse(img) || ""
     });
   }
+  isLocal(){
+    const { post } = this.state;
+    //userSession.isUserSignedIn()
+    if (post.attrs.username === User.currentUser()._id){
+      return true;
+    }
+    return false;
+  }
   render() {
     const { post, img } = this.state;
     return (
       <div className="single-post-wrapper">
         <div className="single-post">
-          <button className="btn btn-outline-light delete-button">
-          <XCircle color="#f8f9fa" />
-          </button>
+          {this.isLocal() && <button className="btn delete-button" data-toggle="tooltip" title="Delete this pic"> 
+          <XCircle color="rgb(242, 242, 242)" size="50"/>
+          </button>}
           <img src={img} />
           <p>{post.attrs.caption}</p>
         </div>
