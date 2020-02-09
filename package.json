@@ -12,6 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "@webscopeio/react-textarea-autocomplete": "^4.6.3",
     "blockstack": "^19.2.5",
     "emoji-mart": "^2.11.2",
