@@ -398,17 +398,11 @@ textarea[autoresize] {
   position: absolute;
   right: -5px;
   top: -5px;
-  opacity: 0.5;
-  // border-radius: 50%;
-  // width: 50px;
-  // height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   // background-color: #f8f9fa;
 }
-.delete-button:hover{
-  opacity: 1;
-
-}
-
 .masonry {
   margin: 1.5em auto;
   max-width: 95%;
