@@ -1,0 +1,13 @@
+{
+  "name": "Nuddle",
+  "description": "Secure Nudes Platform",
+  "icons": [
+    {
+    "src": "images/logo.jpg",
+    "sizes": "900x900",
+    "type": "image/jpg"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone"
+}
