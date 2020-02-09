@@ -3,20 +3,15 @@ import { Model, User } from "radiks";
 export default class Post extends Model {
   static className = "Post";
   static schema = {
-    // username : {
-    //   type: String,
-    //   decrypted : true,
-    //   required : true
-    // },
-    caption: {
+    username : {
       type: String,
       decrypted : true,
       required : true
     },
-    byteArray: {
-      type: ArrayBuffer,
-      // decrypted : true
-      // required : true
+    caption: {
+      type: String,
+      decrypted : true,
+      required : true
     },
     base64: {
       type: String,
