@@ -59,12 +59,17 @@ export default class SinglePost extends Component {
       img: JSON.parse(img) || ""
     });
   }
+  async deletePhoto(){
+    const { post } = this.state;
+    await post.destroy();
+    await this.props.history.push('/');
+  }
   render() {
     const { post, img } = this.state;
     return (
       <div className="single-post-wrapper">
         <div className="single-post">
-          <button className="btn btn-outline-light delete-button">
+          <button className="btn btn-outline-light delete-button" onClick={this.deletePhoto.bind(this)}>
           <XCircle color="#f8f9fa" />
           </button>
           <img src={img} />
