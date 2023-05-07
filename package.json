@@ -15,7 +15,7 @@
     "@webscopeio/react-textarea-autocomplete": "^4.6.3",
     "blockstack": "^19.2.5",
     "emoji-mart": "^2.11.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "radiks": "^0.2.2-beta.1",
